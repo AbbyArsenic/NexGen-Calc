@@ -13,6 +13,8 @@ const Header = () => {
             <NavLink to="/ForgotPassword" activeClassName="is-active">| Password Recovery |</NavLink>
         	<NavLink to="/FlightPlan" activeClassName="is-active">| Flight Plan |</NavLink>
         	<NavLink to="/TakeOffData" activeClassName="is-active">| Take Off Data |</NavLink>
+        	<NavLink to="/LandingData" activeClassName="is-active">| Landing Data |</NavLink>
+        	<NavLink to="/TOLD-Card" activeClassName="is-active">| TOLD Card |</NavLink>
         	
         	<br />
         	<NavLink to="/asdf" activeClassName="is-active">| 404 Page |</NavLink>

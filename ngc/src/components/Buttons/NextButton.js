@@ -1,9 +1,8 @@
 import React from 'react';
 
-const NextButton = () => (
+export const NextButton = () => (
 	<div>
 		<button>Next</button>
 	</div>
 );
 
-export default NextButton;

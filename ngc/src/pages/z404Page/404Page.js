@@ -6,7 +6,9 @@ const NotFoundPage = () => (
         <h2>404!</h2>
         <Link to="/">Go home</Link>
         <br />
-        <img src="../../../assets/images/lostman.png" alt="404 Page" />
+        <Link to="/">
+        	<img src="../../../assets/images/lostman.png" alt="404 Page" />
+        </Link>
     </div>
 ); 
 

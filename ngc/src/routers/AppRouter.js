@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, /* Link, NavLink */ } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import HomePage from '../pages/1Home';
 import SignUpPage from '../pages/2SignUp';
@@ -9,6 +9,8 @@ import LoginPage from '../pages/4Login';
 import ForgotPassword from '../pages/5ForgotPassword';
 import FlightPlan from '../pages/6FlightPlan';
 import TakeOffData from '../pages/7TakeOffData';
+import LandingData from '../pages/8LandingData';
+import TOLDCard from '../pages/9TOLDCard';
 
 import Header from '../components/Header.js';
 
@@ -24,6 +26,8 @@ const AppRouter = () => (
                 <Route path="/ForgotPassword" component={ForgotPassword} />
                 <Route path="/FlightPlan" component={FlightPlan} />
                 <Route path="/TakeOffData" component={TakeOffData} />
+                <Route path="/LandingData" component={LandingData} />
+                <Route path="/TOLD-Card" component={TOLDCard} />
 
                 <Route component={NotFoundPage} />
             </Switch>

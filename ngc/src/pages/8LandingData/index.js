@@ -1,1 +1,1 @@
-export { default } from './LoginPage.js';
+export { default } from './LandingData.js';

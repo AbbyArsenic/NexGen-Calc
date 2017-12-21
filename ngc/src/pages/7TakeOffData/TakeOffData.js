@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import NextButton from '../../components/Buttons/NextButton';
+import { NextButton } from '../../components/Buttons';
 
 const TakeOffData = () => (
 	<div>

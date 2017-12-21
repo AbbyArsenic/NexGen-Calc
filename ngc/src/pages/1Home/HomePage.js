@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import SignUpButton from '../../components/Buttons/SignUpButton';
-import LoginButton from '../../components/Buttons/LoginButton';
+import { SignUpButton, LoginButton } from '../../components/Buttons';
 
 class HomePage extends React.Component {
   render() {

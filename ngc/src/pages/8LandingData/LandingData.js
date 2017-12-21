@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import NextButton from '../../components/Buttons/NextButton';
+import { BackButton, NextButton } from '../../components/Buttons';
 
 const LandingData = () => (
 	<div>
@@ -41,6 +41,9 @@ const LandingData = () => (
 				</tr>
 			</table>
 		</div>
+		<Link to={"/TakeOffData"}>
+			<BackButton />
+		</Link>
 		<Link to={"/TOLD-Card"}>
 			<NextButton />
 		</Link>

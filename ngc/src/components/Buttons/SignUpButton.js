@@ -1,9 +1,8 @@
 import React from 'react';
 
-const SignUpButton = () => (
+export const SignUpButton = () => (
 	<div>
 		<button>Sign Up</button>
 	</div>
 );
 
-export default SignUpButton;
