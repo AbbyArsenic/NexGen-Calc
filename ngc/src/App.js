@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import SignUpButton from './Components/SignUpButton';
-import LoginButton from './Components/LoginButton';
+import SignUpButton from './components/SignUpButton';
+import LoginButton from './components/LoginButton';
 
 class App extends Component {
   render() {

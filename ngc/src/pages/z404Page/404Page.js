@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => (
     <div>
-        404! - <Link to="/">Go home</Link>
+        <h2>404!</h2>
+        <Link to="/">Go home</Link>
+        <br />
+        <img src="../../../assets/images/lostman.png" alt="404 Page" />
     </div>
-);
+); 
 
 export default NotFoundPage;

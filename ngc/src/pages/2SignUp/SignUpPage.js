@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import SubmitButton from '../../components/Buttons/SubmitButton';
 
 const SignUpPage = () => (
 	<div>
@@ -9,8 +12,10 @@ const SignUpPage = () => (
 			<input name="private" type="checkbox" />Private Pilot
 			<input name="commercial" type="checkbox" />Commercial Pilot<br/>
 			<input name="student" type="checkbox" />Student Pilot
-			<input name="cfi" type="checkbox" />CFI
-
+			<input name="cfi" type="checkbox" />CFI<br />
+			<Link to={'/TermsOfService'} >
+				<SubmitButton />
+			</Link>
 		</form>
 	</div>
 );
