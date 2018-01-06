@@ -24,7 +24,7 @@ export const Arrive = () => (
         <tr>
           <th>Takeoff: </th>
           <td>
-            <input name="TakeoffArrive" />
+            <input name="takeoffArrive" />
           </td>
         </tr>
       </tbody>

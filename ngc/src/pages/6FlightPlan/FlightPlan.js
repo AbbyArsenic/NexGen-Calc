@@ -17,11 +17,6 @@ class FlightPlan extends React.Component {
 		this.setState({
 			[name]: value
 		});
-
-		/*const airportData = e.target.name + "Data";
-		axios.get(`http://avwx.rest/api/metar/${value}?options=info`)
-      .then(res => this.setState({ airportData: res.data }))
-      .catch(err => console.log(err));*/
 	}
 
 	render() {
@@ -40,7 +35,7 @@ class FlightPlan extends React.Component {
 					<table>
 						<tbody>
 							<tr>
-								<th>Elevation: </th>
+								<th>Airport: </th>
 								<td>
 									<input name="elevationDepart" value={this.state.departSearch} />
 								</td>
@@ -52,9 +47,9 @@ class FlightPlan extends React.Component {
 								</td>
 							</tr>
 							<tr>
-								<th>Takeoff: </th>
+								<th>Takeoff Weight: </th>
 								<td>
-									<input name="elevationDepart" />
+									<input name="takeoffDepart" />
 								</td>
 							</tr>
 						</tbody>
@@ -76,19 +71,19 @@ class FlightPlan extends React.Component {
 							<tr>
 								<th>Elevation: </th>
 								<td>
-									<input name="elevationArive" />
+									<input name="elevationArrive" />
 								</td>
 							</tr>
 							<tr>
 								<th>Headwind: </th>
 								<td>
-									<input name="headwindArive" value={this.state.arriveSearch} />
+									<input name="headwindArrive" value={this.state.arriveSearch} />
 								</td>
 							</tr>
 							<tr>
-								<th>Takeoff: </th>
+								<th>Takeoff Weight: </th>
 								<td>
-									<input name="elevationArive" />
+									<input name="TakeoffArrive" />
 								</td>
 							</tr>
 						</tbody>
