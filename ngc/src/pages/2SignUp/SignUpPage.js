@@ -6,9 +6,11 @@ import { SubmitButton } from '../../components/Buttons';
 const SignUpPage = () => (
 	<div>
 		<form>
-			Email:<input name="email" /><br/>
 			Username:<input name="username" /><br/>
-			Password:<input name="password" /><br/>
+			First Name:<input name="firstName" /><br/>
+			Last Name:<input name="lastName" /><br/>
+			Email:<input name="email" /><br/>
+			Password:<input type="password" name="password" /><br/>
 			<input name="private" type="checkbox" />Private Pilot
 			<input name="commercial" type="checkbox" />Commercial Pilot<br/>
 			<input name="student" type="checkbox" />Student Pilot
