@@ -1,17 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Header.css';
+import './Navbar.css';
 
 
-const Header = () => {
+const Navbar = () => {
   return(
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">NexGen Calc</a>
+    <nav className="navbar navbar-fixed-top navbar-inverse">
+      <div className="container-fluid">
+        <div className="navbar-header">
+            <a className="navbar-brand" href="/">NexGen Calc</a>
         </div>
-        <ul class="nav navbar-nav">
-          
+
+        <ul className="nav navbar-nav">
         <li>
           <NavLink to="/TermsOfService" 
             activeClassName="is-active">ToS
@@ -23,13 +23,8 @@ const Header = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/TakeOffData" 
-            activeClassName="is-active">Take Off Data
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/LandingData" 
-            activeClassName="is-active">Landing Data
+          <NavLink to="/TOLDreview" 
+            activeClassName="is-active">TOLD Review
           </NavLink>
         </li>
         <li>
@@ -41,12 +36,12 @@ const Header = () => {
         <ul class="nav navbar-nav navbar-right">
           <li>
             <NavLink to="/SignUp" activeClassName="is-active">
-              <span class="glyphicon glyphicon-user"></span> Sign Up
+              <span className="glyphicon glyphicon-user"></span> Sign Up
             </NavLink>
           </li>
           <li>
             <NavLink to="/Login" activeClassName="is-active">
-              <span class="glyphicon glyphicon-log-in"></span> Login
+              <span className="glyphicon glyphicon-log-in"></span> Login
             </NavLink>
           </li>
         </ul>
@@ -55,4 +50,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

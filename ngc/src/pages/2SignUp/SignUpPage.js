@@ -11,6 +11,7 @@ const SignUpPage = () => (
 			Last Name:<input name="lastName" /><br/>
 			Email:<input name="email" /><br/>
 			Password:<input type="password" name="password" /><br/>
+			Confirm Password:<input type="password" name="password2" /><br/>
 			<input name="private" type="checkbox" />Private Pilot
 			<input name="commercial" type="checkbox" />Commercial Pilot<br/>
 			<input name="student" type="checkbox" />Student Pilot
