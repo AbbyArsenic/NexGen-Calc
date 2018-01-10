@@ -10,7 +10,7 @@ import ForgotPassword from '../pages/5ForgotPassword';
 import FlightPlan from '../pages/6FlightPlan';
 import TOLDreview from '../pages/8TOLDreview';
 import TOLDCard from '../pages/9TOLDCard';
-import Navbar from '../components/Navbar.js';
+import Navbar from '../components/Navbar/Navbar.js';
 import '../styles/index.css';
 
 const AppRouter = () => (

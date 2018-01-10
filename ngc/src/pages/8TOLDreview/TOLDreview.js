@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BackButton, NextButton } from '../../components/Buttons';
-import FormGroup from "../../components/FormGroup";
+import FormGroup from "../../components/Forms/FormGroup";
 import "./TOLDreview.css";
 
 const TOLDreview = () => (
