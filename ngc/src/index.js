@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import { Provider } from 'react-redux';
 import configureStore from './redux/store/configureStore';
+
 import { addUserInputsAll } from './redux/actions/userInput';
 import { addAPIValuesAll } from './redux/actions/apiValues';
 import { addPressureAltitudeBoth, addCalculatedValues } from './redux/actions/calculatedValues';
@@ -9,6 +10,10 @@ import AppRouter from './routers/AppRouter';
 import registerServiceWorker from './utils/create-react-app/registerServiceWorker';
 
 const store = configureStore();
+
+store.subscribe(() => {
+    console.log(store.getState());
+});
 
 store.dispatch(addUserInputsAll(
     {
@@ -48,7 +53,13 @@ const allCalcVals = {
 };
 store.dispatch(addCalculatedValues(allCalcVals));
 
-console.log(store.getState());
 
-ReactDOM.render(<AppRouter />, document.getElementById('root'));
+const jsx = (
+    <Provider store={store}>
+        <AppRouter />
+    </Provider>
+);
+const target = document.getElementById('root');
+
+ReactDOM.render(jsx, target);
 registerServiceWorker();
