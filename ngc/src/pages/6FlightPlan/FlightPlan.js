@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { NextButton } from '../../components/Buttons';
+import AirportDataTakeoff from '../../components/Forms/AirportDataTakeoff';
+import AirportDataLanding from '../../components/Forms/AirportDataLanding';
 
 const FlightPlan = (props) => (
 		<div>
@@ -18,41 +20,7 @@ const FlightPlan = (props) => (
 						</div>
 					</div>
 				</div>
-				<h2>Airport data</h2>
-				<table>
-					<tbody>
-						<tr>
-							<th>Temperature: </th>
-							<td>
-								<input name="tempDepart" />
-							</td>
-						</tr>
-						<tr>
-							<th>Altimeter: </th>
-							<td>
-								<input name="altimeterDepart" />
-							</td>
-						</tr>
-						<tr>
-							<th>Elevation: </th>
-							<td>
-								<input name="elevationDepart" />
-							</td>
-						</tr>
-						<tr>
-							<th>Headwind: </th>
-							<td>
-								<input name="headwindDepart" />
-							</td>
-						</tr>
-						<tr>
-							<th>Takeoff Weight: </th>
-							<td>
-								<input name="takeoffDepart" />
-							</td>
-						</tr>
-					</tbody>
-				</table>
+			<AirportDataTakeoff />
 			</div>
 			<hr />
 			<div>
@@ -67,41 +35,7 @@ const FlightPlan = (props) => (
 						</div>
 					</div>
 				</div>
-				<h2>Airport data</h2>
-				<table>
-					<tbody>
-						<tr>
-							<th>Temperature: </th>
-							<td>
-								<input name="tempArrive" />
-							</td>
-						</tr>
-						<tr>
-							<th>Altimeter: </th>
-							<td>
-								<input name="altimeterArrive" />
-							</td>
-						</tr>
-						<tr>
-							<th>Elevation: </th>
-							<td>
-								<input name="elevationArrive" />
-							</td>
-						</tr>
-						<tr>
-							<th>Headwind: </th>
-							<td>
-								<input name="headwindArrive" />
-							</td>
-						</tr>
-						<tr>
-							<th>Takeoff Weight: </th>
-							<td>
-								<input name="TakeoffArrive" />
-							</td>
-						</tr>
-					</tbody>
-				</table>
+			<AirportDataLanding />
 			</div>
 			<hr />
 			<div>
