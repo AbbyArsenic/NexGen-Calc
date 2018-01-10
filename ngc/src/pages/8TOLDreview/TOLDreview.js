@@ -8,7 +8,6 @@ const TOLDreview = () => (
 		<h2>Landing Airport Name</h2>
 		<div>
 			<table>
-				<caption>These values will pre-fill, but will be editable in the event that the user wants to edit anything</caption>
 				<tbody>
 					<tr>
 						<th>Elevation: </th>
