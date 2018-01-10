@@ -3,6 +3,10 @@ th, thead {
   text-align: center;
 }
 
+h3 {
+  margin: 10px;
+}
+
 #atisNotes {
   height: 80px;
 }
