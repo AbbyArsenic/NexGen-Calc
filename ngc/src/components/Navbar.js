@@ -33,7 +33,7 @@ const Navbar = () => {
           </NavLink>
         </li>            
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+        <ul className="nav navbar-nav navbar-right">
           <li>
             <NavLink to="/SignUp" activeClassName="is-active">
               <span className="glyphicon glyphicon-user"></span> Sign Up
