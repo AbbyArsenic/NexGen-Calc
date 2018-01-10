@@ -1,12 +1,12 @@
-th, thead {
+.TOLDheader {
   background-color: #eee;
   text-align: center;
 }
 
-h3 {
+h4 {
   margin: 10px;
 }
 
 #atisNotes {
-  height: 80px;
+  height: 200px;
 }
