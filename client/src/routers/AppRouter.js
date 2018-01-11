@@ -8,8 +8,8 @@ import NotFoundPage from '../pages/z404Page';
 import LoginPage from '../pages/4Login';
 import ForgotPassword from '../pages/5ForgotPassword';
 import FlightPlan from '../pages/6FlightPlan';
-import TOLDreview from '../pages/8TOLDreview';
-import TOLDCard from '../pages/9TOLDCard';
+import TOLDreview from '../pages/7TOLDreview';
+import TOLDCard from '../pages/8TOLDCard';
 import Navbar from '../components/Navbar/Navbar.js';
 import '../styles/index.css';
 
