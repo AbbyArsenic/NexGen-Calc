@@ -1,9 +1,11 @@
 // Reducers
     // API Values
     const apiReducerDefaultState = {
+        airportTakeoff: '',
         fieldElevationTakeoff: undefined,
         altimeterTakeoff: undefined,
         tempCTakeoff: undefined,
+        airportLanding: '',
         fieldElevationLanding: undefined,
         altimeterLanding: undefined,
         tempCLanding: undefined
@@ -11,6 +13,16 @@
 
     const apiReducer = (state = apiReducerDefaultState, action) => {
         switch (action.type) {
+            case 'ADD_AIRPORT_TO':
+                return {
+                    ...state,
+                    airportTakeoff: action.airport
+                };
+            case 'ADD_AIRPORT_LA':
+                return {
+                    ...state,
+                    airportLanding: action.airport
+                };
             case 'ADD_API_VALUE_FIELDELEVATION_TO':
                 return {
                     ...state,

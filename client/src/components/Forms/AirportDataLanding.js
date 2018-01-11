@@ -58,7 +58,7 @@ const AirportDataLanding = (props) => (
                         <input 
                             type='text'
                             name='tempCLanding'
-                            placeholder='Select an airport above'
+                            placeholder='Enter airport code above'
                             value={(props.apiValues.tempCLanding) ? 
                                 (props.apiValues.tempCLanding) : 
                                 ('')}
@@ -74,6 +74,7 @@ const AirportDataLanding = (props) => (
                         <input 
                             type='text'
                             name='altimeterLanding'
+                            placeholder='Enter airport code above'
                             value={(props.apiValues.altimeterLanding) ? 
                                 (props.apiValues.altimeterLanding) : 
                                 ('')}
@@ -89,6 +90,7 @@ const AirportDataLanding = (props) => (
                         <input 
                             type='number'
                             name='fieldElevationLanding'
+                            placeholder='Enter airport code above'
                             value={(props.apiValues.fieldElevationLanding) ? 
                                 (props.apiValues.fieldElevationLanding) : 
                                 ('')}

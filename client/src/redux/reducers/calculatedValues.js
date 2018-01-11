@@ -11,6 +11,7 @@
         accelerateStop: undefined,
         takeoffDistance50Barrier: undefined,
         climbRate: undefined,
+        approachSpeed: 61,
         landingDistance: undefined,
         landingDistance50Barrier: undefined
     };

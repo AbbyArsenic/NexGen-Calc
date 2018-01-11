@@ -58,7 +58,7 @@ const AirportDataTakeoff = (props) => (
                         <input 
                             type='text'
                             name='tempCTakeoff'
-                            placeholder='Select an airport above'
+                            placeholder='Enter airport code above'
                             value={(props.apiValues.tempCTakeoff) ? 
                                 (props.apiValues.tempCTakeoff) : 
                                 ('')}
@@ -74,6 +74,7 @@ const AirportDataTakeoff = (props) => (
                         <input 
                             type='text'
                             name='altimeterTakeoff'
+                            placeholder='Enter airport code above'
                             value={(props.apiValues.altimeterTakeoff) ? 
                                 (props.apiValues.altimeterTakeoff) : 
                                 ('')}
@@ -89,6 +90,7 @@ const AirportDataTakeoff = (props) => (
                         <input 
                             type='text'
                             name='fieldElevationTakeoff'
+                            placeholder='Enter airport code above'
                             value={(props.apiValues.fieldElevationTakeoff) ? 
                                 (props.apiValues.fieldElevationTakeoff) : 
                                 ('')}

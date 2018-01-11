@@ -25,9 +25,11 @@ store.dispatch(addUserInputsAll(
 ));
 store.dispatch(addAPIValuesAll(
     {
+        airportTakeoff: 'KIWA',
         fieldElevationTakeoff: 1389,
         altimeterTakeoff: 32.20,
         tempCTakeoff: 18.8889,
+        airportLanding: 'KPHX',
         fieldElevationLanding: 1389,
         altimeterLanding: 32.04,
         tempCLanding: 20.07
@@ -62,4 +64,5 @@ const jsx = (
 const target = document.getElementById('root');
 
 ReactDOM.render(jsx, target);
+
 registerServiceWorker();
