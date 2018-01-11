@@ -1,0 +1,41 @@
+{
+  "name": "nexgencalc",
+  "version": "1.0.0",
+  "description": "Take off and landing calculations computed for the Cesna C172SP aircraft",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zeeroh0/NexGen-Calc.git"
+  },
+  "keywords": [
+    "Cesna",
+    "calculations",
+    "C172SP",
+    "takeoff",
+    "landing",
+    "aircraft"
+  ],
+  "author": "Tyler Mitchell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zeeroh0/NexGen-Calc/issues"
+  },
+  "homepage": "https://github.com/Zeeroh0/NexGen-Calc#readme",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}
