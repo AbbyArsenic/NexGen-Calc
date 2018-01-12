@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FormGroup from "../../components/Forms/FormGroup";
-
-import { SubmitButton } from '../../components/Buttons';
+import Button from '../../components/Buttons';
 
 const SignUpPage = () => (
 
@@ -36,8 +35,8 @@ const SignUpPage = () => (
 				type="password"
 			/>
 			<div className="form-group">
-			  <label htmlFor="certification" className="col-sm-5 control-label">Certification Level:</label>
-			  <div className="col-sm-7">
+			  <label htmlFor="certification" className="col-sm-4 control-label">Certification Level:</label>
+			  <div className="col-sm-8">
 				  <select className="form-control" id="certification">
 				    <option value="private">Private Pilot</option>
 				    <option value="commercial">Commercial Pilot</option>
@@ -47,9 +46,9 @@ const SignUpPage = () => (
 			  </div>
 			</div>
 			<div>
-				<Link to="/TermsOfService">
-					<button className="pull-right">Submit</button>
-				</Link>
+				By signing up, you agree to our
+				<Link to="/TermsOfService"> terms or service</Link>.
+				<Button text="Submit" className="pull-right" />
 			</div>
 		</form>
 	</div>

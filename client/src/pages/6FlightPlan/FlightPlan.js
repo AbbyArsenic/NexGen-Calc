@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
-import { NextButton } from '../../components/Buttons';
+import Button from '../../components/Buttons';
 import AirportDataTakeoff from '../../components/Forms/AirportDataTakeoff';
 import AirportDataLanding from '../../components/Forms/AirportDataLanding';
 import API from '../../utils/APIs/weatherAPI';
@@ -39,8 +38,8 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 								}}
 							/>
 							<span className="input-group-btn">
-								<button
-									className="btn btn-default"
+								<Button
+									text="Submit"
 									type="button"
 									onClick={(e) => {
 										API.getWx(apiValues.airportTakeoff)
@@ -72,7 +71,7 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 											})
 											.catch(err => console.log(err));
 									  }}
-								>Submit</button>
+								/>
 							</span>
 						</div>
 					</div>
@@ -94,8 +93,8 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 								}}
 							/>
 							<span className="input-group-btn">
-								<button
-									className="btn btn-default"
+								<Button
+									text="Submit"
 									type="button"
 									onClick={(e) => {
 										API.getWx(apiValues.airportLanding)
@@ -118,7 +117,7 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 										})
 										.catch(err => console.log(err));
 									}}
-								>Submit</button>
+								/>
 							</span>
 						</div>
 					</div>
@@ -127,21 +126,20 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 			</div>
 			<hr />
 			<div>
-				<button
+				<Button
+					text="Clear"
 					onClick={e => {
 						dispatch(clearUserInputs());
 						dispatch(clearAPIInputs());
 					}}
-				>Clear</button>
-				<Link to={"/TOLDreview"}>
-					<NextButton
-						onClick={() => {
-							console.log('Updating Pressure Altitude Takeoff value!');
-							const pressureAltitudeTakeoff = eq.PressureAltitudeTakeoff(apiValues.fieldElevationTakeoff, apiValues.altimeterTakeoff);
-							dispatch(addPressTO(pressureAltitudeTakeoff));
-						}}
-					/>
-				</Link>
+				/>
+				<Button text="Continue"
+          onClick={(e) => {
+						const pressureAltitudeTakeoff = equations.PressureAltitudeTakeoff(apiValues.fieldElevationTakeoff, apiValues.altimeterTakeoff);
+					  console.log(pressureAltitudeTakeoff);
+						dispatch(addPressTO(pressureAltitudeTakeoff));
+					}}
+        />
 			</div>
 		</div>
 ); 

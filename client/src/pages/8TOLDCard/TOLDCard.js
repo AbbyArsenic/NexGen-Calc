@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { HomeButton, PrintButton } from '../../components/Buttons';
+import Button from '../../components/Buttons';
 import "./TOLDCard.css";
 
 const TOLDCard = () => (
@@ -65,8 +64,9 @@ const TOLDCard = () => (
       </table>
     </div>
     <div className="col-md-1">
-  		<PrintButton />
-  		<HomeButton />
+      <Button text="Print" />
+  		<Button text="Back" />
+  		<Button text="Home" />
   	</div>
   </div>
 );
