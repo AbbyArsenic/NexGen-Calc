@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import FormGroup from "../../components/Forms/FormGroup";
 import Button from '../../components/Buttons';
+import TermsOfService from "../3TermsOfService/TermsOfService";
 import "./SignUp.css";
 
-const SignUpPage = () => (
+const SignUpPage = (props) => (
 
 	<div className="contentPanel">
 		<h2 className="centerElement">Create an Account</h2>
@@ -48,8 +49,11 @@ const SignUpPage = () => (
 			  </div>
 			</div>
 			<div>
-				<p className="centerElement">By signing up, you agree to our
-				<Link to="/TermsOfService"> terms or service</Link>.</p>
+				<p className="centerElement">By signing up, you agree to our{" "}
+				<Link to={`${props.match.url}/tos`}>
+				  Terms of Service
+				</Link>.</p>
+				<Route exact path={`${props.match.url}/tos`} component={TermsOfService} />
 			</div>
 			<div>
 				<Button text="Submit" />
