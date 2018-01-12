@@ -9,10 +9,10 @@
         pressureAltitudeLanding
     });
     export const addPressureAltitudeBoth = (
-        {
-            pressureAltitudeTakeoff = undefined,
-            pressureAltitudeLanding = undefined
-        }
+      {
+        pressureAltitudeTakeoff = undefined,
+        pressureAltitudeLanding = undefined
+      } = {}
     ) => ({
         type: 'ADD_PRESSURE_ALTITUDE_BOTH',
         newValues: {
@@ -64,9 +64,9 @@
         type: 'ADD_CLIMB_RATE',
         climbRate
     });
-    export const addLandingDistance = (landingDistance = undefined) => ({
-        type: 'ADD_LANDING_DISTANCE',
-        landingDistance
+    export const addLandingRoll = (landingRoll = undefined) => ({
+        type: 'ADD_LANDING_ROLL',
+        landingRoll
     });
     export const addLandingDistance50 = (landingDistance50Barrier = undefined) => ({
         type: 'ADD_LANDING_DISTANCE50',
@@ -82,7 +82,7 @@
             accelerateStop = undefined,
             takeoffDistance50Barrier = undefined,
             climbRate = undefined,
-            landingDistance = undefined,
+            landingRoll = undefined,
             landingDistance50Barrier = undefined
         } = {}
     ) => ({
@@ -96,7 +96,7 @@
             accelerateStop,
             takeoffDistance50Barrier,
             climbRate,
-            landingDistance,
+            landingRoll,
             landingDistance50Barrier
         }
     });

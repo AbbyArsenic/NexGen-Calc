@@ -17,13 +17,9 @@ import
 		addAirportLanding
 	}
 from '../../redux/actions/apiValues';
-import 
-	{
-		addPressureAltitudeTakeoff as addPressTO
-	}
-from '../../redux/actions/calculatedValues';
+import { addPressureAltitudeBoth as addPA, addCalculatedValues } from '../../redux/actions/calculatedValues';
 
-const equations = require('../../utils/calculations/equations');
+const eq = require('../../utils/calculations/equations');
 
 
 const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history }) => (
@@ -53,16 +49,9 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 													fieldElevationTakeoff 	= parseFloat(res.data.Info.Elevation)*3.28,
 													altimeterTakeoff 		= parseFloat(res.data.Altimeter)/100,
 													tempCTakeoff 			= '';
-
-												if (res.data['Remarks-Info']['Temp-Decimal']) {
-													tempCTakeoff = parseFloat(res.data['Remarks-Info']['Temp-Decimal']);
-												} else {
-													tempCTakeoff = parseFloat(res.data.Temperature);
-												}
-
-												// (res.data['Remarks-Info']['Temp-Decimal']) ? 
-												// (tempCTakeoff = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
-												// (tempCTakeoff = parseFloat(res.data.Temperature));
+                            (res.data['Remarks-Info']['Temp-Decimal']) ? 
+                            (tempCTakeoff = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
+                            (tempCTakeoff = parseFloat(res.data.Temperature));
 													
 												dispatch(addTO(
 													{
@@ -108,10 +97,10 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 												fieldElevationLanding 	= parseFloat(res.data.Info.Elevation)*3.28,
 												altimeterLanding		= parseFloat(res.data.Altimeter)/100,
 												tempCLanding			= '';
-
-												(res.data['Remarks-Info']['Temp-Decimal']) ? 
-												(tempCLanding = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
-												(tempCLanding = parseFloat(res.data.Temperature));
+                          (res.data['Remarks-Info']['Temp-Decimal']) ? 
+                          (tempCLanding = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
+                          (tempCLanding = parseFloat(res.data.Temperature));
+                        
 											dispatch(addLA({
 												airportLanding,
 												fieldElevationLanding,
@@ -139,9 +128,40 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 				/>
 				<Button text="Continue"
           onClick={(e) => {
-						const pressureAltitudeTakeoff = equations.PressureAltitudeTakeoff(apiValues.fieldElevationTakeoff, apiValues.altimeterTakeoff);
-					  console.log(pressureAltitudeTakeoff);
-						dispatch(addPressTO(pressureAltitudeTakeoff));
+						const pressAltTO = eq.PressureAltitudeTakeoff(apiValues.fieldElevationTakeoff, apiValues.altimeterTakeoff);
+						const pressAltLA = eq.PressureAltitudeLanding(apiValues.fieldElevationLanding, apiValues.altimeterLanding);
+            const densAltTO = eq.DensityAltitudeTakeoff(pressAltTO, apiValues.tempCTakeoff);
+            const densAltLA = eq.DensityAltitudeLanding(pressAltLA, apiValues.tempCLanding);
+            const takeoffRoll = eq.TakeoffRoll(userInput.weightTakeoff, apiValues.tempCTakeoff, pressAltTO, userInput.headwindTakeoff);
+            const liftoffSpeed = eq.LiftoffSpeed(userInput.weightTakeoff);
+            const liftoffSpeed50 = eq.LiftoffSpeed50ftBarrier(userInput.weightTakeoff);
+            const acclStop = eq.AccelerateStop(takeoffRoll);
+            const takeoffdist50 = eq.TakeoffDistance50ftBarrier(userInput.weightTakeoff, apiValues.tempCTakeoff, pressAltTO, userInput.headwindTakeoff);
+            const climbRate = eq.ClimbRate(apiValues.tempCTakeoff, pressAltTO);
+            const landingRoll = eq.LandingRoll(apiValues.tempCLanding, pressAltLA, userInput.headwindLanding);
+            const landDist50 = eq.LandingDistance50ftBarrier(apiValues.tempCLanding, pressAltLA, userInput.headwindLanding);
+
+            dispatch(addPA(
+              {
+                pressureAltitudeTakeoff: pressAltTO,
+                pressureAltitudeLanding: pressAltLA
+              }
+            ));
+
+            dispatch(addCalculatedValues(
+              {
+                densityAltitudeTakeoff: densAltTO,
+                densityAltitudeLanding: densAltLA,
+                takeoffRoll,
+                liftoffSpeed,
+                liftoffSpeed50Barrier: liftoffSpeed50,
+                accelerateStop: acclStop,
+                takeoffDistance50Barrier: takeoffdist50,
+                climbRate,
+                landingRoll,
+                landingDistance50Barrier: landDist50
+              }
+            ));     
 					}}
         />
 			</div>
