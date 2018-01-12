@@ -6,17 +6,12 @@ import './Navbar.css';
 const Navbar = () => {
   return(
     <nav className="navbar navbar-fixed-top navbar-inverse">
-      <div className="container-fluid">
+      <div className="container">
         <div className="navbar-header">
             <a className="navbar-brand" href="/">NexGen Calc</a>
         </div>
 
         <ul className="nav navbar-nav">
-        <li>
-          <NavLink to="/TermsOfService" 
-            activeClassName="is-active">ToS
-          </NavLink>
-        </li>
         <li>
           <NavLink to="/FlightPlan" 
             activeClassName="is-active">Flight Plan
@@ -34,11 +29,6 @@ const Navbar = () => {
         </li>            
         </ul>
         <ul className="nav navbar-nav navbar-right">
-          <li>
-            <NavLink to="/SignUp" activeClassName="is-active">
-              <span className="glyphicon glyphicon-user"></span> Sign Up
-            </NavLink>
-          </li>
           <li>
             <NavLink to="/Login" activeClassName="is-active">
               <span className="glyphicon glyphicon-log-in"></span> Login
