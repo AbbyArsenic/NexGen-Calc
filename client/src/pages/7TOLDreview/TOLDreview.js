@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import Button from '../../components/Buttons';
 import FormGroup from "../../components/Forms/FormGroup";
+
 import "./TOLDreview.css";
 
-const TOLDreview = () => (
+const TOLDreview = (props) => (
 	<div>
 		<div className="row">
 			<h2 className="centerText">TOLD Card Review</h2>
@@ -15,7 +18,7 @@ const TOLDreview = () => (
 				  	id="pAltTakeoff"
 				  	label="P-ALT"
 				  	placeholder="Pressure Altitude"
-				  />
+          />
 				  <FormGroup
 				  	id="dAltTakeoff"
 				  	label="D-ALT"
@@ -95,4 +98,10 @@ const TOLDreview = () => (
 	</div>
 );
 
-export default TOLDreview;
+const mapStateToProps = state => {
+	return {
+		calculatedValues: state.calculatedValues
+	};
+};
+
+export default connect(mapStateToProps)(TOLDreview);

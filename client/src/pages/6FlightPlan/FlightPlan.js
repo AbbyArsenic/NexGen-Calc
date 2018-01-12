@@ -15,8 +15,14 @@ import
 		addAirportLanding
 	}
 from '../../redux/actions/apiValues';
+import { equations as eq } from '../../utils/calculations/equations';
+import 
+	{
+		addPressureAltitudeTakeoff as addPressTO
+	}
+from '../../redux/actions/calculatedValues';
 
-const FlightPlan = (props) => (
+const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history }) => (
 		<div>
 			<div>
 				<h2>Airport of Departure: </h2>
@@ -28,7 +34,7 @@ const FlightPlan = (props) => (
 								className="form-control"
 								placeholder='Search for airport (eg "KIWA" for Phoenix Mesa-Gateway Airport)'
 								onChange={(e) => {
-									props.dispatch(addAirportTakeoff(e.target.value));
+									dispatch(addAirportTakeoff(e.target.value));
 								}}
 							/>
 							<span className="input-group-btn">
@@ -36,20 +42,32 @@ const FlightPlan = (props) => (
 									text="Submit"
 									type="button"
 									onClick={(e) => {
-										e.preventDefault();
-										API.getWx(props.apiValues.airportTakeoff)
+										API.getWx(apiValues.airportTakeoff)
 											.then((res) => {
 												console.log(res.data);
-												let airportTakeoff = res.data.Info.ICAO,
-												fieldElevationTakeoff = parseFloat(res.data.Info.Elevation)*3.28,
-												altimeterTakeoff = parseFloat(res.data.Altimeter)/100,
-												tempCTakeoff = parseFloat(res.data['Remarks-Info']['Temp-Decimal']);
-												props.dispatch(addTO({
-												airportTakeoff,
-												fieldElevationTakeoff,
-												altimeterTakeoff,
-												tempCTakeoff
-												}));
+												let airportTakeoff 			= res.data.Info.ICAO,
+													fieldElevationTakeoff 	= parseFloat(res.data.Info.Elevation)*3.28,
+													altimeterTakeoff 		= parseFloat(res.data.Altimeter)/100,
+													tempCTakeoff 			= '';
+
+												if (res.data['Remarks-Info']['Temp-Decimal']) {
+													tempCTakeoff = parseFloat(res.data['Remarks-Info']['Temp-Decimal']);
+												} else {
+													tempCTakeoff = parseFloat(res.data.Temperature);
+												}
+
+												// (res.data['Remarks-Info']['Temp-Decimal']) ? 
+												// (tempCTakeoff = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
+												// (tempCTakeoff = parseFloat(res.data.Temperature));
+													
+												dispatch(addTO(
+													{
+														airportTakeoff,
+														fieldElevationTakeoff,
+														altimeterTakeoff,
+														tempCTakeoff
+													}
+												));
 											})
 											.catch(err => console.log(err));
 									  }}
@@ -71,7 +89,7 @@ const FlightPlan = (props) => (
 								className="form-control"
 								placeholder='Enter airport of arrival here'
 								onChange={(e) => {
-									props.dispatch(addAirportLanding(e.target.value));
+									dispatch(addAirportLanding(e.target.value));
 								}}
 							/>
 							<span className="input-group-btn">
@@ -79,15 +97,18 @@ const FlightPlan = (props) => (
 									text="Submit"
 									type="button"
 									onClick={(e) => {
-										// e.preventDefault();
-										API.getWx(props.apiValues.airportLanding)
+										API.getWx(apiValues.airportLanding)
 										.then((res) => {
 											console.log(res.data);
-											let airportLanding = res.data.Info.ICAO,
-												fieldElevationLanding = parseFloat(res.data.Info.Elevation)*3.28,
-												altimeterLanding = parseFloat(res.data.Altimeter)/100,
-												tempCLanding = parseFloat(res.data['Remarks-Info']['Temp-Decimal']);
-											props.dispatch(addLA({
+											let airportLanding 			= res.data.Info.ICAO,
+												fieldElevationLanding 	= parseFloat(res.data.Info.Elevation)*3.28,
+												altimeterLanding		= parseFloat(res.data.Altimeter)/100,
+												tempCLanding			= '';
+
+												(res.data['Remarks-Info']['Temp-Decimal']) ? 
+												(tempCLanding = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
+												(tempCLanding = parseFloat(res.data.Temperature));
+											dispatch(addLA({
 												airportLanding,
 												fieldElevationLanding,
 												altimeterLanding,
@@ -108,14 +129,17 @@ const FlightPlan = (props) => (
 				<Button
 					text="Clear"
 					onClick={e => {
-						e.preventDefault();
-						props.dispatch(clearUserInputs());
-						props.dispatch(clearAPIInputs());
+						dispatch(clearUserInputs());
+						dispatch(clearAPIInputs());
 					}}
 				/>
-				<Link to={"/TOLDreview"}>
-					<Button text="Continue" />
-				</Link>
+				<Button text="Continue"
+          onClick={(e) => {
+						const pressureAltitudeTakeoff = equations.PressureAltitudeTakeoff(apiValues.fieldElevationTakeoff, apiValues.altimeterTakeoff);
+					  console.log(pressureAltitudeTakeoff);
+						dispatch(addPressTO(pressureAltitudeTakeoff));
+					}}
+        />
 			</div>
 		</div>
 ); 
@@ -124,7 +148,8 @@ const FlightPlan = (props) => (
 const mapStateToProps = (state) => {
 	return {
 		apiValues: state.apiValues,
-		userInput: state.userInput
+		userInput: state.userInput,
+		calculatedValues: state.calculatedValues
 	};
 };
 

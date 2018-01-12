@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FormGroup = props => (
+const FormGroup = ({ id, label, placeholder, value }) => (
   <div className="form-group">
     <label htmlFor={props.id} className="col-sm-4 control-label">{props.label}</label>
     <div className="col-sm-8">
