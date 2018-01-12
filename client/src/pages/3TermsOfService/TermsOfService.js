@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const TermsOfService = () => (
-	<div>
+	<div className="contentPanel">
 		<hr />
 		<h3>Terms of Service <Link to="/SignUp">[Close]</Link></h3>
 		<p>Here are our terms of service:<br />
