@@ -5,8 +5,8 @@ import Button from '../../components/Buttons';
 
 const SignUpPage = () => (
 
-	<div id="formContainer">
-		<h2 id="formTitle">Create an Account</h2>
+	<div className="contentPanel" id="formContainer">
+		<h2 className="centerElement">Create an Account</h2>
 		<form 
 			autoCapitalize="off" 
 			autoCorrect="off" 
@@ -35,7 +35,7 @@ const SignUpPage = () => (
 				type="password"
 			/>
 			<div className="form-group">
-			  <label htmlFor="certification" className="col-sm-4 control-label">Certification Level:</label>
+			  <label htmlFor="certification" className="col-sm-4 control-label">Certification</label>
 			  <div className="col-sm-8">
 				  <select className="form-control" id="certification">
 				    <option value="private">Private Pilot</option>
@@ -46,9 +46,11 @@ const SignUpPage = () => (
 			  </div>
 			</div>
 			<div>
-				By signing up, you agree to our
-				<Link to="/TermsOfService"> terms or service</Link>.
-				<Button text="Submit" className="pull-right" />
+				<p className="centerElement">By signing up, you agree to our
+				<Link to="/TermsOfService"> terms or service</Link>.</p>
+			</div>
+			<div>
+				<Button text="Submit" />
 			</div>
 		</form>
 	</div>
