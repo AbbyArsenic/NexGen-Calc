@@ -24,100 +24,102 @@ const eq = require('../../utils/calculations/equations');
 
 const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history }) => (
 		<div className="contentPanel">
-			<div>
-				<h2>Airport of Departure: </h2>
-				<div className="row">
-					<div className="col-sm-6">
-						<div className="input-group">
-							<input
-								type="text"
-								className="form-control"
-								placeholder='Search for airport (eg "KIWA" for Phoenix Mesa-Gateway Airport)'
-								onChange={(e) => {
-									dispatch(addAirportTakeoff(e.target.value));
-								}}
-							/>
-							<span className="input-group-btn">
-								<Button
-									text="Submit"
-									type="button"
-									onClick={(e) => {
-										API.getWx(apiValues.airportTakeoff)
-											.then((res) => {
-												console.log(res.data);
-												let airportTakeoff 			= res.data.Info.ICAO,
-													fieldElevationTakeoff 	= parseFloat(res.data.Info.Elevation)*3.28,
-													altimeterTakeoff 		= parseFloat(res.data.Altimeter)/100,
-													tempCTakeoff 			= '';
-                            (res.data['Remarks-Info']['Temp-Decimal']) ? 
-                            (tempCTakeoff = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
-                            (tempCTakeoff = parseFloat(res.data.Temperature));
-													
-												dispatch(addTO(
-													{
-														airportTakeoff,
-														fieldElevationTakeoff,
-														altimeterTakeoff,
-														tempCTakeoff
-													}
-												));
-											})
-											.catch(err => console.log(err));
-									  }}
-								/>
-							</span>
-						</div>
-					</div>
-				</div>
-			<AirportDataTakeoff />
-			</div>
-			<hr />
-			<div>
-				<h2>Airport of Arrival: </h2>
-				<div className="row">
-					<div className="col-sm-6">
-						<div className="input-group">
-							<input
-								type="text"
-								className="form-control"
-								placeholder='Enter airport of arrival here'
-								onChange={(e) => {
-									dispatch(addAirportLanding(e.target.value));
-								}}
-							/>
-							<span className="input-group-btn">
-								<Button
-									text="Submit"
-									type="button"
-									onClick={(e) => {
-										API.getWx(apiValues.airportLanding)
-										.then((res) => {
-											console.log(res.data);
-											let airportLanding 			= res.data.Info.ICAO,
-												fieldElevationLanding 	= parseFloat(res.data.Info.Elevation)*3.28,
-												altimeterLanding		= parseFloat(res.data.Altimeter)/100,
-												tempCLanding			= '';
-                          (res.data['Remarks-Info']['Temp-Decimal']) ? 
-                          (tempCLanding = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
-                          (tempCLanding = parseFloat(res.data.Temperature));
-                        
-											dispatch(addLA({
-												airportLanding,
-												fieldElevationLanding,
-												altimeterLanding,
-												tempCLanding
-											}));
-										})
-										.catch(err => console.log(err));
+			<div className="row">
+				<h1 className="centerText">Flight Data</h1>
+				<hr />
+				<div className="col-md-6">
+					<h2>Airport of Departure: </h2>
+					<div className="row">
+						<div className="col-sm-11">
+							<div className="input-group">
+								<input
+									type="text"
+									className="form-control"
+									placeholder='Departure airport code (eg "KIWA")'
+									onChange={(e) => {
+										dispatch(addAirportTakeoff(e.target.value));
 									}}
 								/>
-							</span>
+								<span className="input-group-btn">
+									<Button
+										text="Submit"
+										type="button"
+										onClick={(e) => {
+											API.getWx(apiValues.airportTakeoff)
+												.then((res) => {
+													console.log(res.data);
+													let airportTakeoff 			= res.data.Info.ICAO,
+														fieldElevationTakeoff 	= parseFloat(res.data.Info.Elevation)*3.28,
+														altimeterTakeoff 		= parseFloat(res.data.Altimeter)/100,
+														tempCTakeoff 			= '';
+	                            (res.data['Remarks-Info']['Temp-Decimal']) ? 
+	                            (tempCTakeoff = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
+	                            (tempCTakeoff = parseFloat(res.data.Temperature));
+														
+													dispatch(addTO(
+														{
+															airportTakeoff,
+															fieldElevationTakeoff,
+															altimeterTakeoff,
+															tempCTakeoff
+														}
+													));
+												})
+												.catch(err => console.log(err));
+										 }}
+									/>
+								</span>
+							</div>
 						</div>
 					</div>
+					<AirportDataTakeoff />
 				</div>
-			<AirportDataLanding />
+				<div className="col-md-6">
+					<h2>Airport of Arrival: </h2>
+					<div className="row">
+						<div className="col-sm-11">
+							<div className="input-group">
+								<input
+									type="text"
+									className="form-control"
+									placeholder='Arrival airport code'
+									onChange={(e) => {
+										dispatch(addAirportLanding(e.target.value));
+									}}
+								/>
+								<span className="input-group-btn">
+									<Button
+										text="Submit"
+										type="button"
+										onClick={(e) => {
+											API.getWx(apiValues.airportLanding)
+											.then((res) => {
+												console.log(res.data);
+												let airportLanding 			= res.data.Info.ICAO,
+													fieldElevationLanding 	= parseFloat(res.data.Info.Elevation)*3.28,
+													altimeterLanding		= parseFloat(res.data.Altimeter)/100,
+													tempCLanding			= '';
+	                          (res.data['Remarks-Info']['Temp-Decimal']) ? 
+	                          (tempCLanding = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
+	                          (tempCLanding = parseFloat(res.data.Temperature));
+	                        
+												dispatch(addLA({
+													airportLanding,
+													fieldElevationLanding,
+													altimeterLanding,
+													tempCLanding
+												}));
+											})
+											.catch(err => console.log(err));
+										}}
+									/>
+								</span>
+							</div>
+						</div>
+					</div>
+					<AirportDataLanding />
+				</div>
 			</div>
-			<hr />
 			<div>
 				<Button
 					text="Clear"
