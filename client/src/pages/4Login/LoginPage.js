@@ -9,8 +9,8 @@ const LoginPage = () => (
 		<h2 id="formTitle">Sign in</h2>
 		<form 
 			autocapitalize="off" 
-			autocorrect="off" 
-			spellcheck="false">
+			autoCorrect="off" 
+			spellCheck="false">
 			<div className="form-group">
 				<label className="control-label">Username</label>
 				<input 
