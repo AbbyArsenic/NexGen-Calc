@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Buttons';
 
 const LoginPage = () => (
-	<div className="col-md-4" id="formContainer">
-		<h2 id="formTitle">Sign in</h2>
+	<div className="contentPanel" id="formContainer">
+		<h2 id="formTitle">Log in</h2>
 		<form 
-			autocapitalize="off" 
+			autoCapitalize="off" 
 			autoCorrect="off" 
 			spellCheck="false">
 			<div className="form-group">
@@ -16,7 +16,6 @@ const LoginPage = () => (
 					className="form-control" 
 					id="username" 
 					name="username" 
-					tabindex="1" 
 					type="text" 
 					required=""
 				/>
@@ -30,18 +29,17 @@ const LoginPage = () => (
 					I forgot
 				</Link>
 				<input 
-					autocomplete="off" 
+					autoComplete="off" 
 					className="form-control" 
 					id="password" 
 					name="password" 
-					tabindex="2" 
 					type="password" 
 					required=""
 				/>
 			</div>
 			<div>
 				<Link to="/FlightPlan">
-					<Button text="Sign in" />
+					<Button text="Log in" />
 				</Link>
 				<p><br />
 					Don't have an account?

@@ -24,6 +24,13 @@ td {
 
 .contentPanel {
   background-color: #fff;
-  opacity: .8;
   border-radius: 10px;
+  margin: 0 auto;
+  opacity: .8;
+  padding-bottom: 10px;
+  width: 80%;
+}
+
+.centerElement {
+  text-align: center;
 }
