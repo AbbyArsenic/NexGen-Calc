@@ -17,7 +17,13 @@ td {
   width: 50%;
 }
 
-.contentPanel {
-  padding-top: 60px;
+.mainContainer {
+  margin-top: 60px;
   height: 80vh;
+}
+
+.contentPanel {
+  background-color: #fff;
+  opacity: .8;
+  border-radius: 10px;
 }

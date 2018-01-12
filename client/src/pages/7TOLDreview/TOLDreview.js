@@ -1,50 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BackButton, NextButton } from '../../components/Buttons';
+import Button from '../../components/Buttons';
 import FormGroup from "../../components/Forms/FormGroup";
 import "./TOLDreview.css";
 
 const TOLDreview = () => (
 	<div>
 		<div className="row">
-			<h2>TOLD Card Review</h2>
+			<h2 className="centerText">TOLD Card Review</h2>
 			<div className="col-md-5">
-				<h3>Takeoff Airport: (pull from input)</h3>
+				<h3 className="centerText">Takeoff Airport: (pull from input)</h3>
 				<form className="form-horizontal">
 				  <FormGroup
 				  	id="pAltTakeoff"
-				  	label="Pressure Altitude"
-				  	placeholder="P-ALT"
+				  	label="P-ALT"
+				  	placeholder="Pressure Altitude"
 				  />
 				  <FormGroup
 				  	id="dAltTakeoff"
-				  	label="Density Altitude"
-				  	placeholder="D-ALT"
+				  	label="D-ALT"
+				  	placeholder="Density Altitude"
 				  />
 				  <FormGroup
 				  	id="toRoll"
-				  	label="Takeoff Roll"
-				  	placeholder="T.O. Roll"
+				  	label="T.O. Roll"
+				  	placeholder="Takeoff Roll"
 				  />
 				  <FormGroup
 				  	id="toRoll50"
-				  	label="Takeoff Roll (50')"
-				  	placeholder="T.O. Roll over 50' barrier"
+				  	label="T.O. Roll 50'"
+				  	placeholder="Takeoff Roll over 50' barrier"
 				  />
 				  <FormGroup
 				  	id="loSpeed"
-				  	label="Liftoff Speed"
-				  	placeholder="L.O. Speed"
+				  	label="L.O. Speed"
+				  	placeholder="Liftoff Speed"
 				  />
 				  <FormGroup
 				  	id="loSpeed50"
-				  	label="Liftoff Speed (50')"
-				  	placeholder="L.O. Speed over 50' barrier"
+				  	label="L.O. Speed 50'"
+				  	placeholder="Liftoff Speed over 50' barrier"
 				  />
 				  <FormGroup
 				  	id="accStop"
-				  	label="Accelerate-Stop"
-				  	placeholder="ACC/STOP"
+				  	label="ACC/STOP"
+				  	placeholder="Accelerate-Stop"
 				  />
 				  <FormGroup
 				  	id="climbRate"
@@ -54,42 +54,42 @@ const TOLDreview = () => (
 				</form>
 			</div>
 			<div className="col-md-5">
-				<h3>Landing Airport: (pull from input)</h3>
+				<h3 className="centerText">Landing Airport: (pull from input)</h3>
 				<form className="form-horizontal">
 				  <FormGroup
 				  	id="pAltLanding"
-				  	label="Pressure Altitude"
-				  	placeholder="P-ALT"
+				  	label="P-ALT"
+				  	placeholder="Pressure Altitude"
 				  />
 				  <FormGroup
 				  	id="dAltLanding"
-				  	label="Density Altitude"
-				  	placeholder="D-ALT"
+				  	label="D-ALT"
+				  	placeholder="Density Altitude"
 				  />
 				  <FormGroup
 				  	id="landingDist"
-				  	label="Landing Distance"
-				  	placeholder="Landing Dist."
+				  	label="Landing Dist."
+				  	placeholder="Landing Distance"
 				  />
 				  <FormGroup
 				  	id="landingDist50"
-				  	label="Landing Dist. (50')"
+				  	label="Land. Dist. 50'"
 				  	placeholder="Landing Dist. over 50' barrier"
 				  />
 				  <FormGroup
 				  	id="appSpeed"
-				  	label="Approach Speed"
-				  	placeholder="APP Speed"
+				  	label="APP Speed"
+				  	placeholder="Approach Speed"
 				  />
 				</form>
 			</div>
 		</div>
 		<div className="col-md-1 col-md-offset-11">
 			<Link to={"/FlightPlan"}>
-				<BackButton />
+				<Button text="Back" />
 			</Link>
 			<Link to={"/TOLD-Card"}>
-				<NextButton />
+				<Button text="Continue" />
 			</Link>
 		</div>
 	</div>

@@ -1,25 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import { SignUpButton, LoginButton } from '../../components/Buttons';
+import Button from '../../components/Buttons';
 
 class HomePage extends React.Component {
   render() {
     return (
-      <div>
+      <div className="col-sm-6 col-sm-offset-1 contentPanel">
         <div>
           <h1>NexGen Calculation</h1>
+          <h2>Cessna 172SP</h2>
           <hr />
-          <h2>Cessna C178S</h2>
         </div>
-        <br />
-        <h2>Welcome!</h2>
-        <Link to={"/SignUp"} >
-          <SignUpButton />
-        </Link>
-        <Link to={"/Login"} >
-          <LoginButton />
-        </Link>
+        <div>
+          <h3>Welcome! We're here to help streamline your pre-flight preparations</h3>
+          <p>Please log in or sign up to continue.</p>
+          <Link to={"/SignUp"} >
+            <Button text="Sign Up" />
+          </Link>
+          <Link to={"/Login"}>
+            <Button text="Log In" />
+          </Link>
+        </div>
       </div>
     );
   }

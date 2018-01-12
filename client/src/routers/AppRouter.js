@@ -16,9 +16,9 @@ import '../styles/index.css';
 const AppRouter = () => (
   <BrowserRouter>
     <div>
-      <div className="container-fluid mainContainer">
+      <div className="container-fluid">
         <Navbar />
-        <div className="container contentPanel">
+        <div className="container mainContainer">
           <Switch>
             <Route path="/" component={HomePage} exact={true}/>
             <Route path="/SignUp" component={SignUpPage} />

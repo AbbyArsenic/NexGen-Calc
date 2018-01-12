@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
-import { NextButton } from '../../components/Buttons';
+import Button from '../../components/Buttons';
 import AirportDataTakeoff from '../../components/Forms/AirportDataTakeoff';
 import AirportDataLanding from '../../components/Forms/AirportDataLanding';
 import API from '../../utils/APIs/weatherAPI';
@@ -33,8 +32,8 @@ const FlightPlan = (props) => (
 								}}
 							/>
 							<span className="input-group-btn">
-								<button
-									className="btn btn-default"
+								<Button
+									text="Submit"
 									type="button"
 									onClick={(e) => {
 										e.preventDefault();
@@ -54,7 +53,7 @@ const FlightPlan = (props) => (
 											})
 											.catch(err => console.log(err));
 									  }}
-								>Submit</button>
+								/>
 							</span>
 						</div>
 					</div>
@@ -76,8 +75,8 @@ const FlightPlan = (props) => (
 								}}
 							/>
 							<span className="input-group-btn">
-								<button
-									className="btn btn-default"
+								<Button
+									text="Submit"
 									type="button"
 									onClick={(e) => {
 										// e.preventDefault();
@@ -97,7 +96,7 @@ const FlightPlan = (props) => (
 										})
 										.catch(err => console.log(err));
 									}}
-								>Submit</button>
+								/>
 							</span>
 						</div>
 					</div>
@@ -106,16 +105,16 @@ const FlightPlan = (props) => (
 			</div>
 			<hr />
 			<div>
-				<button
+				<Button
+					text="Clear"
 					onClick={e => {
 						e.preventDefault();
 						props.dispatch(clearUserInputs());
 						props.dispatch(clearAPIInputs());
 					}}
-				
-				>Clear</button>
+				/>
 				<Link to={"/TOLDreview"}>
-					<NextButton />
+					<Button text="Continue" />
 				</Link>
 			</div>
 		</div>
