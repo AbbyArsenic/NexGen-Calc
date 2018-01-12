@@ -11,7 +11,9 @@ import FlightPlan from '../pages/6FlightPlan';
 import TOLDreview from '../pages/7TOLDreview';
 import TOLDCard from '../pages/8TOLDCard';
 import Navbar from '../components/Navbar/Navbar.js';
+
 import '../styles/index.css';
+
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -35,8 +37,5 @@ const AppRouter = () => (
     </div>
   </BrowserRouter>
 );
-
-
-                
 
 export default AppRouter;

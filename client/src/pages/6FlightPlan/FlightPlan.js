@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import Button from '../../components/Buttons';
 import AirportDataTakeoff from '../../components/Forms/AirportDataTakeoff';
 import AirportDataLanding from '../../components/Forms/AirportDataLanding';
+
 import API from '../../utils/APIs/weatherAPI';
 import { addUserInputsAll as clearUserInputs } from '../../redux/actions/userInput';
 import 
@@ -15,12 +17,14 @@ import
 		addAirportLanding
 	}
 from '../../redux/actions/apiValues';
-import { equations as eq } from '../../utils/calculations/equations';
 import 
 	{
 		addPressureAltitudeTakeoff as addPressTO
 	}
 from '../../redux/actions/calculatedValues';
+
+const equations = require('../../utils/calculations/equations');
+
 
 const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history }) => (
 		<div>

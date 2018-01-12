@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Button from '../../components/Buttons';
+
 import "./TOLDCard.css";
 
 const TOLDCard = () => (

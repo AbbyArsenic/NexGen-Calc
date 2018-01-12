@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import Button from '../../components/Buttons';
 
 const LoginPage = () => (
-
 	<div className="col-md-4" id="formContainer">
 		<h2 id="formTitle">Sign in</h2>
 		<form 
@@ -41,7 +41,7 @@ const LoginPage = () => (
 			</div>
 			<div>
 				<Link to="/FlightPlan">
-					<button>Sign In</button>
+					<Button text="Sign in" />
 				</Link>
 				<p><br />
 					Don't have an account?
@@ -50,7 +50,6 @@ const LoginPage = () => (
 			</div>
 		</form>
 	</div>
-
 );
 
 export default LoginPage;
