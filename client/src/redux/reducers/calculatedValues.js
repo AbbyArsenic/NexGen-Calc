@@ -12,7 +12,7 @@
         takeoffDistance50Barrier: undefined,
         climbRate: undefined,
         approachSpeed: 61,
-        landingDistance: undefined,
+        landingRoll: undefined,
         landingDistance50Barrier: undefined
     };
 

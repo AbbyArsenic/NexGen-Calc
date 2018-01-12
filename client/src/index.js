@@ -50,7 +50,7 @@ const allCalcVals = {
     accelerateStop: 2085.4839895636046,
     takeoffDistance50Barrier: 1412.19885246782,
     climbRate: 672.7213845608525,
-    landingDistance: 539.6161063671439,
+    landingRoll: 539.6161063671439,
     landingDistance50Barrier: 1231.6910138381945 
 };
 store.dispatch(addCalculatedValues(allCalcVals));
