@@ -4,7 +4,7 @@ const FormGroup = ({ id, label, placeholder, value } ={}) => (
   <div className="form-group">
     <label htmlFor={id} className="col-sm-4 control-label">{label}</label>
     <div className="col-sm-8">
-      <input type="text" className="form-control" id={id} placeholder={placeholder} />
+      <input className="form-control" id={id} placeholder={placeholder} type="text" value={value} />
     </div>
   </div>
 );
