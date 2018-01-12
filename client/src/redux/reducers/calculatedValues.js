@@ -78,10 +78,10 @@
                     ...state,
                     climbRate: action.climbRate
                 };
-            case 'ADD_LANDING_DISTANCE':
+            case 'ADD_LANDING_ROLL':
                 return {
                     ...state,
-                    landingDistance: action.landingDistance
+                    landingRoll: action.landingRoll
                 };
             case 'ADD_LANDING_DISTANCE50':
                 return {
