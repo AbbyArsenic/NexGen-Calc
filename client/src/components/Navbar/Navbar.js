@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
 import './Navbar.css';
 
 
@@ -8,7 +9,11 @@ const Navbar = () => {
     <nav className="navbar navbar-fixed-top navbar-inverse">
       <div className="container">
         <div className="navbar-header">
-            <a className="navbar-brand" href="/">NexGen Calc</a>
+          <Link to={'/'}>
+            <div className="navbar-brand">
+              NexGen Calc
+            </div>
+          </Link>
         </div>
 
         <ul className="nav navbar-nav">
