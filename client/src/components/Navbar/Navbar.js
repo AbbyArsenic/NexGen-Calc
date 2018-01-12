@@ -6,7 +6,7 @@ import './Navbar.css';
 const Navbar = () => {
   return(
     <nav className="navbar navbar-fixed-top navbar-inverse">
-      <div className="container-fluid">
+      <div className="container">
         <div className="navbar-header">
             <a className="navbar-brand" href="/">NexGen Calc</a>
         </div>

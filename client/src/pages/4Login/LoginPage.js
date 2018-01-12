@@ -4,20 +4,54 @@ import { Link } from 'react-router-dom';
 import { LoginButton } from '../../components/Buttons';
 
 const LoginPage = () => (
-	<div>
-		<form>
-			Username: <input name="username" />
-			<br />
-			Passwod: <input name="password" />
+
+	<div className="col-md-4" id="formContainer">
+		<h2 id="formTitle">Sign in</h2>
+		<form 
+			autocapitalize="off" 
+			autocorrect="off" 
+			spellcheck="false">
+			<div className="form-group">
+				<label className="control-label">Username</label>
+				<input 
+					className="form-control" 
+					id="username" 
+					name="username" 
+					tabindex="1" 
+					type="text" 
+					required=""
+				/>
+			</div>
+			<div className="form-group">
+				<label className="control-label">Password</label>
+				<Link
+					to="/ForgotPassword" 
+					id="forgotPasswordLink" 
+					className="pull-right">
+					I forgot
+				</Link>
+				<input 
+					autocomplete="off" 
+					className="form-control" 
+					id="password" 
+					name="password" 
+					tabindex="2" 
+					type="password" 
+					required=""
+				/>
+			</div>
+			<div>
+				<Link to="/FlightPlan">
+					<button>Sign In</button>
+				</Link>
+				<p><br />
+					Don't have an account?
+					<Link to="/SignUp" className="pull-right"> Sign Up</Link>
+				</p>
+			</div>
 		</form>
-		<Link to={"/FlightPlan"} >
-			<LoginButton />
-		</Link>
-		<br />
-		<Link to={"/ForgotPassword"} >
-			<button>Forgot Password</button>
-		</Link>
 	</div>
+
 );
 
 export default LoginPage;
