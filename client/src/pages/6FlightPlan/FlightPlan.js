@@ -101,10 +101,14 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 										API.getWx(apiValues.airportLanding)
 										.then((res) => {
 											console.log(res.data);
-											let airportLanding = res.data.Info.ICAO,
-												fieldElevationLanding = parseFloat(res.data.Info.Elevation)*3.28,
-												altimeterLanding = parseFloat(res.data.Altimeter)/100,
-												tempCLanding = parseFloat(res.data['Remarks-Info']['Temp-Decimal']);
+											let airportLanding 			= res.data.Info.ICAO,
+												fieldElevationLanding 	= parseFloat(res.data.Info.Elevation)*3.28,
+												altimeterLanding		= parseFloat(res.data.Altimeter)/100,
+												tempCLanding			= '';
+
+												(res.data['Remarks-Info']['Temp-Decimal']) ? 
+												(tempCLanding = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
+												(tempCLanding = parseFloat(res.data.Temperature));
 											dispatch(addLA({
 												airportLanding,
 												fieldElevationLanding,
