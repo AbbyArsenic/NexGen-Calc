@@ -8,7 +8,7 @@ import FormGroup from "../../components/Forms/FormGroup";
 import "./TOLDreview.css";
 
 const TOLDreview = (props) => (
-	<div>
+	<div className="contentPanel">
 		<div className="row">
 			<h2 className="centerText">TOLD Card Review</h2>
 			<div className="col-md-5">

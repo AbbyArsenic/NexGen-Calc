@@ -2,16 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import FormGroup from "../../components/Forms/FormGroup";
 import Button from '../../components/Buttons';
+import "./SignUp.css";
 
 const SignUpPage = () => (
 
-	<div className="contentPanel" id="formContainer">
+	<div className="contentPanel">
 		<h2 className="centerElement">Create an Account</h2>
 		<form 
+			className="form-horizontal"
+			id="signUpForm"
 			autoCapitalize="off" 
 			autoCorrect="off" 
-			spellCheck="false"
-			className="form-horizontal">
+			spellCheck="false">
 			<FormGroup
 				label="First Name"
 				id="firstName"

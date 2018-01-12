@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Buttons';
 
 const LoginPage = () => (
-	<div className="contentPanel" id="formContainer">
-		<h2 id="formTitle">Log in</h2>
+	<div className="contentPanel">
+		<h1 id="formTitle">Log in</h1>
 		<form 
 			autoCapitalize="off" 
 			autoCorrect="off" 

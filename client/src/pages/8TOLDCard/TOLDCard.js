@@ -1,13 +1,13 @@
 import React from 'react';
-
 import Button from '../../components/Buttons';
-
 import "./TOLDCard.css";
 
 const TOLDCard = () => (
   <div className="container">
     <div className="col-md-8">	
-      <table className="table table-bordered table-responsive table-condensed">
+      <table 
+        className="table table-bordered table-responsive table-condensed"
+        id="TOLDtable">
         <thead className="TOLDheader">
           <tr>
             <td colSpan="4">
@@ -18,7 +18,9 @@ const TOLDCard = () => (
         </thead>
         <tbody>
           <tr>
-            <th colSpan="4" className="TOLDheader"><h4>Takeoff</h4></th>
+            <th colSpan="4" className="TOLDheader">
+              <h4>Takeoff</h4>
+            </th>
           </tr>
           <tr>
             <td>P-ALT: </td>
@@ -37,7 +39,9 @@ const TOLDCard = () => (
             <td>Climb (FPM): </td>
           </tr>
           <tr>
-            <th colSpan="4" className="TOLDheader"><h4>Landing</h4></th>
+            <th colSpan="4" className="TOLDheader">
+              <h4>Landing</h4>
+            </th>
           </tr>
           <tr>
             <td>P-ALT: </td>
@@ -51,7 +55,9 @@ const TOLDCard = () => (
             <td>APP Speed: </td>
           </tr>
           <tr>
-            <th colSpan="4" className="TOLDheader"><h4>ATIS</h4></th>
+            <th colSpan="4" className="TOLDheader">
+              <h4>ATIS</h4>
+            </th>
           </tr>
           <tr>
             <td colSpan="4" id="atisNotes"></td>

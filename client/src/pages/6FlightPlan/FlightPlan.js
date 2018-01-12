@@ -27,7 +27,7 @@ const equations = require('../../utils/calculations/equations');
 
 
 const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history }) => (
-		<div>
+		<div className="contentPanel">
 			<div>
 				<h2>Airport of Departure: </h2>
 				<div className="row">
