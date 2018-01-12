@@ -16,19 +16,21 @@ import '../styles/index.css';
 const AppRouter = () => (
   <BrowserRouter>
     <div>
-      <div className="container-fluid">
+      <div className="container-fluid mainContainer">
         <Navbar />
-        <Switch>
-          <Route path="/" component={HomePage} exact={true}/>
-          <Route path="/SignUp" component={SignUpPage} />
-          <Route path="/TermsOfService" component={TermsOfService} />
-          <Route path="/Login" component={LoginPage} />
-          <Route path="/ForgotPassword" component={ForgotPassword} />
-          <Route path="/FlightPlan" component={FlightPlan} />
-          <Route path="/TOLDreview" component={TOLDreview} />
-          <Route path="/TOLD-Card" component={TOLDCard} />  
-          <Route component={NotFoundPage} />
-        </Switch>
+        <div className="container contentPanel">
+          <Switch>
+            <Route path="/" component={HomePage} exact={true}/>
+            <Route path="/SignUp" component={SignUpPage} />
+            <Route path="/TermsOfService" component={TermsOfService} />
+            <Route path="/Login" component={LoginPage} />
+            <Route path="/ForgotPassword" component={ForgotPassword} />
+            <Route path="/FlightPlan" component={FlightPlan} />
+            <Route path="/TOLDreview" component={TOLDreview} />
+            <Route path="/TOLD-Card" component={TOLDCard} />  
+            <Route component={NotFoundPage} />
+          </Switch>
+        </div>
       </div>
     </div>
   </BrowserRouter>

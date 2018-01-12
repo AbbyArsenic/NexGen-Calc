@@ -5,7 +5,7 @@ import "./TOLDCard.css";
 
 const TOLDCard = () => (
   <div className="container">
-    <div className="col-md-8 col-md-offset-2">	
+    <div className="col-md-8">	
       <table className="table table-bordered table-responsive table-condensed">
         <thead className="TOLDheader">
           <tr>
@@ -20,8 +20,8 @@ const TOLDCard = () => (
             <th colSpan="4" className="TOLDheader"><h4>Takeoff</h4></th>
           </tr>
           <tr>
-            <td>Airport: </td>
             <td>P-ALT: </td>
+            <td>D-ALT: </td>
           </tr>
           <tr>
             <td>Liftoff Speed: </td>
@@ -39,11 +39,14 @@ const TOLDCard = () => (
             <th colSpan="4" className="TOLDheader"><h4>Landing</h4></th>
           </tr>
           <tr>
-            <td>LND Roll: </td>
             <td>P-ALT: </td>
+            <td>D-ALT: </td>
           </tr>
           <tr>
+            <td>LND Roll: </td>
             <td>LND Roll (50'): </td>
+          </tr>
+          <tr>
             <td>APP Speed: </td>
           </tr>
           <tr>

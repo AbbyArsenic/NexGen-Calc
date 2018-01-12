@@ -43,7 +43,7 @@ const TOLDreview = () => (
 				  />
 				  <FormGroup
 				  	id="accStop"
-				  	label="Accelerate/Stop"
+				  	label="Accelerate-Stop"
 				  	placeholder="ACC/STOP"
 				  />
 				  <FormGroup
@@ -73,8 +73,13 @@ const TOLDreview = () => (
 				  />
 				  <FormGroup
 				  	id="landingDist50"
-				  	label="Landing Distance (50')"
+				  	label="Landing Dist. (50')"
 				  	placeholder="Landing Dist. over 50' barrier"
+				  />
+				  <FormGroup
+				  	id="appSpeed"
+				  	label="Approach Speed"
+				  	placeholder="APP Speed"
 				  />
 				</form>
 			</div>
