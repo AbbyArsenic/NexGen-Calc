@@ -18,6 +18,10 @@ td {
   width: 50%;
 }
 
+button {
+  width: 75px;
+}
+
 .mainContainer {
   margin-top: 60px;
   height: 80vh;
@@ -32,8 +36,9 @@ td {
   width: 80%;
 }
 
-.centerElement {
-  text-align: center;
+
+#buttonGutter {
+  margin-top: 20px;
 }
 
 @media print {

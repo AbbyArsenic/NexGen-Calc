@@ -77,9 +77,11 @@ const TOLDCard = () => (
         </tbody>
       </table>
     </div>
-    <div className="col-md-1 hidePrint">
-      <Button text="Print" onClick={printTOLD} />
-      <Link to="./TOLDreview"><Button text="Back" /></Link>
+    <div className="hidePrint">
+      <Link to="./TOLDreview"><Button text="Back" /></Link>{" "}
+      <button className="btn" onClick={printTOLD}>
+        <span class="glyphicon glyphicon-print"></span> Print
+      </button>
   	</div>
   </div>
 );

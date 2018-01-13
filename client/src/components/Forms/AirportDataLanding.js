@@ -24,6 +24,7 @@ const AirportDataLanding = (props) => (
                     <th>Landing Weight: </th>
                     <td>
                         <input
+                            className="form-control"
                             type='text'
                             name='weightLanding'
                             placeholder='Required'
@@ -40,6 +41,7 @@ const AirportDataLanding = (props) => (
                     <th>Landing Headwind: </th>
                     <td>
                         <input
+                            className="form-control"
                             type='text'
                             name='headwindLanding'
                             placeholder='Required'
@@ -56,6 +58,7 @@ const AirportDataLanding = (props) => (
                     <th>Temperature: </th>
                     <td>
                         <input 
+                            className="form-control"
                             type='text'
                             name='tempCLanding'
                             placeholder='Enter airport code above'
@@ -72,6 +75,7 @@ const AirportDataLanding = (props) => (
                     <th>Altimeter: </th>
                     <td>
                         <input 
+                            className="form-control"
                             type='text'
                             name='altimeterLanding'
                             placeholder='Enter airport code above'
@@ -88,6 +92,7 @@ const AirportDataLanding = (props) => (
                     <th>Elevation: </th>
                     <td>
                         <input 
+                            className="form-control"
                             type='number'
                             name='fieldElevationLanding'
                             placeholder='Enter airport code above'

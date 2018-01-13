@@ -24,6 +24,7 @@ const AirportDataTakeoff = (props) => (
                     <th>Takeoff Weight: </th>
                     <td>
                         <input
+                            className="form-control"
                             type='text'
                             name='weightTakeoff'
                             placeholder='Required'
@@ -40,6 +41,7 @@ const AirportDataTakeoff = (props) => (
                     <th>Takeoff Headwind: </th>
                     <td>
                         <input
+                            className="form-control"
                             type='text'
                             name='headwindTakeoff'
                             placeholder='Required'
@@ -56,6 +58,7 @@ const AirportDataTakeoff = (props) => (
                     <th>Temperature: </th>
                     <td>
                         <input 
+                            className="form-control"
                             type='text'
                             name='tempCTakeoff'
                             placeholder='Enter airport code above'
@@ -72,6 +75,7 @@ const AirportDataTakeoff = (props) => (
                     <th>Altimeter: </th>
                     <td>
                         <input 
+                            className="form-control"
                             type='text'
                             name='altimeterTakeoff'
                             placeholder='Enter airport code above'
@@ -88,6 +92,7 @@ const AirportDataTakeoff = (props) => (
                     <th>Elevation: </th>
                     <td>
                         <input 
+                            className="form-control"
                             type='text'
                             name='fieldElevationTakeoff'
                             placeholder='Enter airport code above'

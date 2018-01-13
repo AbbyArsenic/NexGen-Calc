@@ -3,12 +3,12 @@ import { Link, Route } from 'react-router-dom';
 import FormGroup from "../../components/Forms/FormGroup";
 import Button from '../../components/Buttons';
 import TermsOfService from "../3TermsOfService/TermsOfService";
-import "./SignUp.css";
 
 const SignUpPage = (props) => (
 
 	<div className="contentPanel">
-		<h2 className="centerElement">Create an Account</h2>
+		<h2>Create an Account</h2>
+		<hr />
 		<form 
 			className="form-horizontal"
 			id="signUpForm"
