@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import Button from '../../components/Buttons';
+
 import "./TOLDCard.css";
 import "./TOLDPrint.css";
 
@@ -8,7 +11,7 @@ const printTOLD = () => {
   window.print();
 }
 
-const TOLDCard = () => (
+const TOLDCard = ({ calculatedValues: val }) => (
   <div className="container">
     <div className="col-md-8">	
       <table 
@@ -29,20 +32,20 @@ const TOLDCard = () => (
             </th>
           </tr>
           <tr>
-            <td>P-ALT: </td>
-            <td>D-ALT: </td>
+            <td>P-ALT: <span className='TOLDvalue'>{val.pressureAltitudeTakeoff}</span></td>
+            <td>D-ALT: <span className='TOLDvalue'>{val.densityAltitudeTakeoff}</span></td>
           </tr>
           <tr>
-            <td>Liftoff Speed: </td>
-            <td>Liftoff Speed (50'): </td>
+            <td>Liftoff Speed: <span className='TOLDvalue'>{val.liftoffSpeed}</span></td>
+            <td>Liftoff Speed (50'): <span className='TOLDvalue'>{val.liftoffSpeed50Barrier}</span></td>
           </tr>
           <tr>
-            <td>T.O. Roll: </td>
-            <td>T.O. Roll (50'): </td>
+            <td>T.O. Roll: <span className='TOLDvalue'>{val.takeoffRoll}</span></td>
+            <td>T.O. Roll (50'): <span className='TOLDvalue'>{val.takeoffDistance50Barrier}</span></td>
           </tr>
           <tr>
-            <td>ACC/Stop: </td>
-            <td>Climb (FPM): </td>
+            <td>ACC/Stop: <span className='TOLDvalue'>{val.accelerateStop}</span></td>
+            <td>Climb (FPM): <span className='TOLDvalue'>{val.climbRate}</span></td>
           </tr>
           <tr>
             <th colSpan="4" className="TOLDheader">
@@ -50,15 +53,15 @@ const TOLDCard = () => (
             </th>
           </tr>
           <tr>
-            <td>P-ALT: </td>
-            <td>D-ALT: </td>
+            <td>P-ALT: <span className='TOLDvalue'>{val.pressureAltitudeLanding}</span></td>
+            <td>D-ALT: <span className='TOLDvalue'>{val.densityAltitudeLanding}</span></td>
           </tr>
           <tr>
-            <td>LND Dist: </td>
-            <td>LND Dist. (50'): </td>
+            <td>LND Dist: <span className='TOLDvalue'>{val.landingRoll}</span></td>
+            <td>LND Dist. (50'): <span className='TOLDvalue'>{val.landingDistance50Barrier}</span></td>
           </tr>
           <tr>
-            <td>APP Speed: </td>
+            <td>APP Speed: <span className='TOLDvalue'>{val.approachSpeed}</span></td>
           </tr>
           <tr>
             <th colSpan="4" className="TOLDheader">
@@ -84,4 +87,10 @@ const TOLDCard = () => (
   </div>
 );
 
-export default TOLDCard;
+const mapStateToProps = state => {
+	return {
+		calculatedValues: state.calculatedValues
+	};
+};
+
+export default connect(mapStateToProps)(TOLDCard);
