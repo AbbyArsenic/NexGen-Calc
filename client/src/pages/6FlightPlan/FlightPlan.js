@@ -130,18 +130,19 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 				/>
 				<Button text="Continue"
           onClick={(e) => {
-						const pressAltTO = eq.PressureAltitudeTakeoff(apiValues.fieldElevationTakeoff, apiValues.altimeterTakeoff);
-						const pressAltLA = eq.PressureAltitudeLanding(apiValues.fieldElevationLanding, apiValues.altimeterLanding);
-            const densAltTO = eq.DensityAltitudeTakeoff(pressAltTO, apiValues.tempCTakeoff);
-            const densAltLA = eq.DensityAltitudeLanding(pressAltLA, apiValues.tempCLanding);
-            const takeoffRoll = eq.TakeoffRoll(userInput.weightTakeoff, apiValues.tempCTakeoff, pressAltTO, userInput.headwindTakeoff);
-            const liftoffSpeed = eq.LiftoffSpeed(userInput.weightTakeoff);
-            const liftoffSpeed50 = eq.LiftoffSpeed50ftBarrier(userInput.weightTakeoff);
-            const acclStop = eq.AccelerateStop(takeoffRoll);
-            const takeoffdist50 = eq.TakeoffDistance50ftBarrier(userInput.weightTakeoff, apiValues.tempCTakeoff, pressAltTO, userInput.headwindTakeoff);
-            const climbRate = eq.ClimbRate(apiValues.tempCTakeoff, pressAltTO);
-            const landingRoll = eq.LandingRoll(apiValues.tempCLanding, pressAltLA, userInput.headwindLanding);
-            const landDist50 = eq.LandingDistance50ftBarrier(apiValues.tempCLanding, pressAltLA, userInput.headwindLanding);
+						const pressAltTO  = parseFloat(eq.PressureAltitudeTakeoff(apiValues.fieldElevationTakeoff, apiValues.altimeterTakeoff).toFixed(2)),
+						  pressAltLA      = parseFloat(eq.PressureAltitudeLanding(apiValues.fieldElevationLanding, apiValues.altimeterLanding).toFixed(2)),
+              densAltTO       = parseFloat(eq.DensityAltitudeTakeoff(pressAltTO, apiValues.tempCTakeoff).toFixed(2)),
+              densAltLA       = parseFloat(eq.DensityAltitudeLanding(pressAltLA, apiValues.tempCLanding).toFixed(2)),
+              takeoffRoll     = parseFloat(eq.TakeoffRoll(userInput.weightTakeoff, apiValues.tempCTakeoff, pressAltTO, userInput.headwindTakeoff).toFixed(2)),
+              liftoffSpeed    = parseFloat(eq.LiftoffSpeed(userInput.weightTakeoff).toFixed(2)),
+              liftoffSpeed50  = parseFloat(eq.LiftoffSpeed50ftBarrier(userInput.weightTakeoff).toFixed(2)),
+              acclStop        = parseFloat(eq.AccelerateStop(takeoffRoll).toFixed(2)),
+              takeoffdist50   = parseFloat(eq.TakeoffDistance50ftBarrier(userInput.weightTakeoff, apiValues.tempCTakeoff, pressAltTO, userInput.headwindTakeoff).toFixed(2)),
+              climbRate       = parseFloat(eq.ClimbRate(apiValues.tempCTakeoff, pressAltTO).toFixed(2)),
+              approachSpeed   = parseFloat(calculatedValues.approachSpeed.toFixed(2)),
+              landingRoll     = parseFloat(eq.LandingRoll(apiValues.tempCLanding, pressAltLA, userInput.headwindLanding).toFixed(2)),
+              landDist50      = parseFloat(eq.LandingDistance50ftBarrier(apiValues.tempCLanding, pressAltLA, userInput.headwindLanding).toFixed(2));
 
             dispatch(addPA(
               {
@@ -160,11 +161,13 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
                 accelerateStop: acclStop,
                 takeoffDistance50Barrier: takeoffdist50,
                 climbRate,
+                approachSpeed,
                 landingRoll,
                 landingDistance50Barrier: landDist50
               }
-            ));     
-					}}
+            ));
+            history.push('/TOLDreview');
+          }}
         />
 			</div>
 		</div>
