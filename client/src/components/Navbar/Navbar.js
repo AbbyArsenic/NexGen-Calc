@@ -16,20 +16,23 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <ul className="nav navbar-nav">
+        <ul className="nav navbar-nav" id="navHide">
         <li>
           <NavLink to="/FlightPlan" 
-            activeClassName="is-active">Flight Plan
+            activeClassName="is-active"
+            id="navHide">Flight Plan
           </NavLink>
         </li>
         <li>
           <NavLink to="/TOLDreview" 
-            activeClassName="is-active">TOLD Review
+            activeClassName="is-active"
+            id="navHide">TOLD Review
           </NavLink>
         </li>
         <li>
           <NavLink to="/TOLD-Card" 
-            activeClassName="is-active">TOLD Card
+            activeClassName="is-active" 
+            id="navHide">TOLD Card
           </NavLink>
         </li>            
         </ul>
