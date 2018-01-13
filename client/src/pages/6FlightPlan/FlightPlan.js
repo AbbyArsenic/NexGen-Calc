@@ -25,7 +25,7 @@ const eq = require('../../utils/calculations/equations');
 const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history }) => (
 		<div className="contentPanel">
 			<div className="row">
-				<h1 className="centerText">Flight Data</h1>
+				<h1>  Flight Data</h1>
 				<hr />
 				<div className="col-md-6">
 					<h2>Airport of Departure: </h2>
@@ -35,7 +35,7 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 								<input
 									type="text"
 									className="form-control"
-									placeholder='Departure airport code (eg "KIWA")'
+									placeholder='Departure airport (eg "KIWA")'
 									onChange={(e) => {
 										dispatch(addAirportTakeoff(e.target.value));
 									}}
@@ -120,14 +120,14 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 					<AirportDataLanding />
 				</div>
 			</div>
-			<div>
+			<div id="buttonGutter">
 				<Button
 					text="Clear"
 					onClick={e => {
 						dispatch(clearUserInputs());
 						dispatch(clearAPIInputs());
 					}}
-				/>
+				/>{" "}
 				<Button text="Continue"
           onClick={(e) => {
 						const pressAltTO  = parseFloat(eq.PressureAltitudeTakeoff(apiValues.fieldElevationTakeoff, apiValues.altimeterTakeoff).toFixed(2)),

@@ -28,7 +28,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
 	<div className="contentPanel">
 		<div className="row">
 			<h2 className="centerText">TOLD Card Review</h2>
-			<div className="col-md-5">
+			<div className="col-md-6">
 				<h3 className="centerText">Takeoff Airport:</h3>
 				<form className="form-horizontal">
 				  <FormGroup
@@ -185,7 +185,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
 				  />
 				</form>
 			</div>
-			<div className="col-md-5">
+			<div className="col-md-6">
 				<h3 className="centerText">Landing Airport:</h3>
 				<form className="form-horizontal">
 				  <FormGroup
@@ -284,16 +284,16 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             }}
 				  />
 				</form>
-			</div>
-		</div>
-		<div className="col-md-1 col-md-offset-11">
-			<Link to={"/FlightPlan"}>
-				<Button text="Back" />
-			</Link>
-			<Link to={"/TOLD-Card"}>
-				<Button text="Continue" />
-			</Link>
-		</div>
+  		<div className="pull-right" id="buttonGutter">
+  			<Link to={"/FlightPlan"}>
+  				<Button text="Back" />
+  			</Link>{" "}
+  			<Link to={"/TOLD-Card"}>
+  				<Button text="Continue" />
+  			</Link>
+  		</div>
+      </div>
+    </div>
 	</div>
 );
 
