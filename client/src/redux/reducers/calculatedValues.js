@@ -78,6 +78,11 @@
                     ...state,
                     climbRate: action.climbRate
                 };
+            case 'ADD_APPROACH_SPEED':
+                return {
+                  ...state,
+                  approachSpeed: action.approachSpeed
+                }
             case 'ADD_LANDING_ROLL':
                 return {
                     ...state,
