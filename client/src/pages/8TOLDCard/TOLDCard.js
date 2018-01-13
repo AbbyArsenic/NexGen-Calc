@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Button from '../../components/Buttons';
 
 import "./TOLDCard.css";
-import "./TOLDPrint.css";
 
 const printTOLD = () => {
   window.print();
@@ -13,9 +12,9 @@ const printTOLD = () => {
 
 const TOLDCard = ({ calculatedValues: val }) => (
   <div className="container">
-    <div className="col-md-8">	
+    <div className="col-md-8 col-sm-11">	
       <table 
-        className="table table-bordered table-responsive table-condensed"
+        className="table table-bordered table-condensed"
         id="TOLDtable">
         <thead className="TOLDheader">
           <tr>
@@ -80,7 +79,7 @@ const TOLDCard = ({ calculatedValues: val }) => (
         </tbody>
       </table>
     </div>
-    <div className="hidePrint">
+    <div className="hidePrint col-sm-1 col-md-3">
       <Link to="./TOLDreview"><Button text="Back" /></Link>{" "}
       <button className="btn" onClick={printTOLD}>
         <span className="glyphicon glyphicon-print"></span> Print
