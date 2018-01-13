@@ -64,6 +64,10 @@
         type: 'ADD_CLIMB_RATE',
         climbRate
     });
+    export const addApproachSpeed = (approachSpeed = undefined) => ({
+      type: 'ADD_APPROACH_SPEED',
+      approachSpeed
+    });
     export const addLandingRoll = (landingRoll = undefined) => ({
         type: 'ADD_LANDING_ROLL',
         landingRoll

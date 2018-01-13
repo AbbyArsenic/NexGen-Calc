@@ -7,7 +7,24 @@ import FormGroup from "../../components/Forms/FormGroup";
 
 import "./TOLDreview.css";
 
-const TOLDreview = ({ calculatedValues }) => (
+import 
+  {
+    addPressureAltitudeTakeoff,
+    addPressureAltitudeLanding,
+    addDensityAltitudeTakeoff,
+    addDensityAltitudeLanding,
+    addTakeoffRoll,
+    addLiftoffSpeed,
+    addLiftoffSpeed50Barrier,
+    addAccelerateStop,
+    addTakeoffDistance50Barrier,
+    addClimbRate,
+    addLandingRoll,
+    addLandingDistance50,
+  } 
+from '../../redux/actions/calculatedValues';
+
+const TOLDreview = ({ calculatedValues, dispatch }) => (
 	<div className="contentPanel">
 		<div className="row">
 			<h2 className="centerText">TOLD Card Review</h2>
@@ -18,65 +35,153 @@ const TOLDreview = ({ calculatedValues }) => (
 				  	id="pAltTakeoff"
 				  	label="P-ALT"
             placeholder="Pressure Altitude"
-            value={(calculatedValues.pressureAltitudeTakeoff) &&
-              ((calculatedValues.pressureAltitudeTakeoff).toFixed(2))
+            value={
+              (calculatedValues.pressureAltitudeTakeoff) ?
+              (calculatedValues.pressureAltitudeTakeoff) :
+              ('')
             }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addPressureAltitudeTakeoff(x));
+              }
+            }}
           />
 				  <FormGroup
 				  	id="dAltTakeoff"
 				  	label="D-ALT"
             placeholder="Density Altitude"
-            value={(calculatedValues.densityAltitudeTakeoff) &&
-              ((calculatedValues.densityAltitudeTakeoff).toFixed(2))
+            value={
+              (calculatedValues.densityAltitudeTakeoff) ?
+              (calculatedValues.densityAltitudeTakeoff) :
+              ('')
             }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addDensityAltitudeTakeoff(x));
+              }
+            }}
 				  />
 				  <FormGroup
 				  	id="toRoll"
 				  	label="T.O. Roll"
             placeholder="Takeoff Roll"
-            value={(calculatedValues.takeoffRoll) &&
-              ((calculatedValues.takeoffRoll).toFixed(2))
+            value={
+              (calculatedValues.takeoffRoll) ?
+              (calculatedValues.takeoffRoll) :
+              ('')
             }
-				  />
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addTakeoffRoll(x));
+              }
+            }}
+          />
 				  <FormGroup
 				  	id="toRoll50"
 				  	label="T.O. Roll 50'"
             placeholder="Takeoff Roll over 50' barrier"
-            value={(calculatedValues.takeoffDistance50Barrier) &&
-              ((calculatedValues.takeoffDistance50Barrier).toFixed(2))
+            value={
+              (calculatedValues.takeoffDistance50Barrier) ?
+              (calculatedValues.takeoffDistance50Barrier) :
+              ('')
             }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addTakeoffDistance50Barrier(x));
+              }
+            }}
 				  />
 				  <FormGroup
 				  	id="loSpeed"
 				  	label="L.O. Speed"
             placeholder="Liftoff Speed"
-            value={(calculatedValues.liftoffSpeed) &&
-              ((calculatedValues.liftoffSpeed).toFixed(2))
+            value={
+              (calculatedValues.liftoffSpeed) ?
+              (calculatedValues.liftoffSpeed) :
+              ('')
             }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addLiftoffSpeed(x));
+              }
+            }}
 				  />
 				  <FormGroup
 				  	id="loSpeed50"
 				  	label="L.O. Speed 50'"
             placeholder="Liftoff Speed over 50' barrier"
-            value={(calculatedValues.liftoffSpeed50Barrier) &&
-              ((calculatedValues.liftoffSpeed50Barrier).toFixed(2))
+            value={
+              (calculatedValues.liftoffSpeed50Barrier) ?
+              (calculatedValues.liftoffSpeed50Barrier) :
+              ('')
             }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addLiftoffSpeed50Barrier(x));
+              }
+            }}
 				  />
 				  <FormGroup
 				  	id="accStop"
 				  	label="ACC/STOP"
             placeholder="Accelerate-Stop"
-            value={(calculatedValues.accelerateStop) &&
-              ((calculatedValues.accelerateStop).toFixed(2))
+            value={
+              (calculatedValues.accelerateStop) ?
+              (calculatedValues.accelerateStop) :
+              ('')
             }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addAccelerateStop(x));
+              }
+            }}
 				  />
 				  <FormGroup
 				  	id="climbRate"
 				  	label="Climb Rate"
             placeholder="Rate of climb"
-            value={(calculatedValues.climbRate) &&
-              ((calculatedValues.climbRate).toFixed(2))
+            value={
+              (calculatedValues.climbRate) ?
+              (calculatedValues.climbRate) :
+              ('')
             }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addClimbRate(x));
+              }
+            }}
 				  />
 				</form>
 			</div>
@@ -87,36 +192,96 @@ const TOLDreview = ({ calculatedValues }) => (
 				  	id="pAltLanding"
 				  	label="P-ALT"
             placeholder="Pressure Altitude"
-            value={(calculatedValues.pressureAltitudeLanding) && 
-              ((calculatedValues.pressureAltitudeLanding).toFixed(2))}
+            value={
+              (calculatedValues.pressureAltitudeLanding) ?
+              (calculatedValues.pressureAltitudeLanding) :
+              ('')
+            }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addPressureAltitudeLanding(x));
+              }
+            }}
 				  />
 				  <FormGroup
 				  	id="dAltLanding"
 				  	label="D-ALT"
             placeholder="Density Altitude"
-            value={(calculatedValues.densityAltitudeLanding) && 
-              ((calculatedValues.densityAltitudeLanding).toFixed(2))}
+            value={
+              (calculatedValues.densityAltitudeLanding) ?
+              (calculatedValues.densityAltitudeLanding) :
+              ('')
+            }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addDensityAltitudeLanding(x));
+              }
+            }}
 				  />
 				  <FormGroup
 				  	id="landingRoll"
 				  	label="Landing Roll."
             placeholder="Landing Roll"
-            value={(calculatedValues.landingRoll) && 
-              ((calculatedValues.landingRoll).toFixed(2))}
+            value={
+              (calculatedValues.landingRoll) ?
+              (calculatedValues.landingRoll) :
+              ('')
+            }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addLandingRoll(x));
+              }
+            }}
 				  />
 				  <FormGroup
 				  	id="landingDist50"
 				  	label="Land. Dist. 50'"
             placeholder="Landing Dist. over 50' barrier"
-            value={(calculatedValues.landingDistance50Barrier) && 
-              ((calculatedValues.landingDistance50Barrier).toFixed(2))}
+            value={
+              (calculatedValues.landingDistance50Barrier) ?
+              (calculatedValues.landingDistance50Barrier) :
+              ('')
+            }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addLandingDistance50(x));
+              }
+            }}
 				  />
 				  <FormGroup
 				  	id="appSpeed"
 				  	label="APP Speed"
             placeholder="Approach Speed"
-            value={(calculatedValues.approachSpeed) && 
-              ((calculatedValues.approachSpeed).toFixed(2))}
+            value={
+              (calculatedValues.approachSpeed) ?
+              (calculatedValues.approachSpeed) :
+              ('')
+            }
+            onChange={(e) => {
+              let x = e.target.value;
+
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                console.log('Good input.', x);
+                
+                dispatch(addLandingDistance50(x));
+              }
+            }}
 				  />
 				</form>
 			</div>
