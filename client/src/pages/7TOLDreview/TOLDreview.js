@@ -43,9 +43,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addPressureAltitudeTakeoff(x));
               }
             }}
@@ -62,9 +60,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addDensityAltitudeTakeoff(x));
               }
             }}
@@ -81,9 +77,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addTakeoffRoll(x));
               }
             }}
@@ -100,9 +94,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addTakeoffDistance50Barrier(x));
               }
             }}
@@ -119,9 +111,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addLiftoffSpeed(x));
               }
             }}
@@ -138,16 +128,14 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addLiftoffSpeed50Barrier(x));
               }
             }}
 				  />
 				  <FormGroup
 				  	id="accStop"
-				  	label="ACC/STOP"
+				  	label="ACC-STOP"
             placeholder="Accelerate-Stop"
             value={
               (calculatedValues.accelerateStop) ?
@@ -157,9 +145,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addAccelerateStop(x));
               }
             }}
@@ -176,9 +162,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addClimbRate(x));
               }
             }}
@@ -200,9 +184,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addPressureAltitudeLanding(x));
               }
             }}
@@ -219,9 +201,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addDensityAltitudeLanding(x));
               }
             }}
@@ -238,9 +218,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addLandingRoll(x));
               }
             }}
@@ -257,9 +235,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addLandingDistance50(x));
               }
             }}
@@ -276,9 +252,7 @@ const TOLDreview = ({ calculatedValues, dispatch }) => (
             onChange={(e) => {
               let x = e.target.value;
 
-              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
-                console.log('Good input.', x);
-                
+              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {                
                 dispatch(addLandingDistance50(x));
               }
             }}

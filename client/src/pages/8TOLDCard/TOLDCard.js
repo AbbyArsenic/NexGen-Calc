@@ -44,7 +44,7 @@ const TOLDCard = ({ calculatedValues: val }) => (
             <td>T.O. Roll (50'): <span className='TOLDvalue'>{val.takeoffDistance50Barrier} FT</span></td>
           </tr>
           <tr>
-            <td>ACC/Stop: <span className='TOLDvalue'>{val.accelerateStop} FT</span></td>
+            <td>ACC-Stop: <span className='TOLDvalue'>{val.accelerateStop} FT</span></td>
             <td>Climb (FPM): <span className='TOLDvalue'>{val.climbRate} FPM</span></td>
           </tr>
           <tr>

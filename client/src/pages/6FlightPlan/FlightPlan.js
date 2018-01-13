@@ -47,11 +47,10 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 										onClick={(e) => {
 											API.getWx(apiValues.airportTakeoff)
 												.then((res) => {
-													console.log(res.data);
-													let airportTakeoff 			= res.data.Info.ICAO,
+													let airportTakeoff 			  = res.data.Info.ICAO,
 														fieldElevationTakeoff 	= parseFloat(res.data.Info.Elevation)*3.28,
-														altimeterTakeoff 		= parseFloat(res.data.Altimeter)/100,
-														tempCTakeoff 			= '';
+														altimeterTakeoff 		    = parseFloat(res.data.Altimeter)/100,
+														tempCTakeoff 		      	= '';
 	                            (res.data['Remarks-Info']['Temp-Decimal']) ? 
 	                            (tempCTakeoff = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
 	                            (tempCTakeoff = parseFloat(res.data.Temperature));
@@ -94,11 +93,10 @@ const FlightPlan = ({ dispatch, apiValues, userInput, calculatedValues, history 
 										onClick={(e) => {
 											API.getWx(apiValues.airportLanding)
 											.then((res) => {
-												console.log(res.data);
-												let airportLanding 			= res.data.Info.ICAO,
+												let airportLanding 			  = res.data.Info.ICAO,
 													fieldElevationLanding 	= parseFloat(res.data.Info.Elevation)*3.28,
-													altimeterLanding		= parseFloat(res.data.Altimeter)/100,
-													tempCLanding			= '';
+													altimeterLanding		    = parseFloat(res.data.Altimeter)/100,
+													tempCLanding		      	= '';
 	                          (res.data['Remarks-Info']['Temp-Decimal']) ? 
 	                          (tempCLanding = parseFloat(res.data['Remarks-Info']['Temp-Decimal'])) : 
 	                          (tempCLanding = parseFloat(res.data.Temperature));

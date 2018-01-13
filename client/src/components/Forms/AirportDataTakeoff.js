@@ -15,6 +15,7 @@ import
     }
 from '../../redux/actions/userInput';
 
+
 const AirportDataTakeoff = (props) => (
     <div>
         <h2>Airport data</h2>
@@ -25,14 +26,17 @@ const AirportDataTakeoff = (props) => (
                     <td>
                         <input
                             className="form-control"
-                            type='text'
                             name='weightTakeoff'
                             placeholder='Required'
                             value={(props.userInput.weightTakeoff) ?
                                 (props.userInput.weightTakeoff) :
                                 ('')}
                             onChange={(e) => {
-                                props.dispatch(addWgt(parseFloat(e.target.value)));
+                              let x = e.target.value;
+
+                              if (x.match(/^\d{1,7}(\.\d{0,2})?$/)) {                
+                                props.dispatch(addWgt(e.target.value));
+                              }
                             }}
                         />
                     </td>
@@ -49,7 +53,11 @@ const AirportDataTakeoff = (props) => (
                                 (props.userInput.headwindTakeoff) :
                                 ('')}
                             onChange={(e) => {
-                                props.dispatch(addHW(parseFloat(e.target.value)));
+                              let x = e.target.value;
+
+                              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                                props.dispatch(addHW(e.target.value));
+                              }
                             }}
                         />
                     </td>
@@ -66,7 +74,11 @@ const AirportDataTakeoff = (props) => (
                                 (props.apiValues.tempCTakeoff) : 
                                 ('')}
                             onChange={(e) => {
-                                props.dispatch(addTemp(parseFloat(e.target.value)));
+                              let x = e.target.value;
+
+                              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                                props.dispatch(addTemp(e.target.value));
+                              }
                             }}
                         />
                     </td>
@@ -83,7 +95,11 @@ const AirportDataTakeoff = (props) => (
                                 (props.apiValues.altimeterTakeoff) : 
                                 ('')}
                             onChange={(e) => {
-                                props.dispatch(addAlt(parseFloat(e.target.value)));
+                              let x = e.target.value;
+
+                              if (x.match(/^\d{1,7}(\.\d{0,2})?$/)) {                
+                                props.dispatch(addAlt(e.target.value));
+                              }
                             }}
                         />             
                     </td>
@@ -100,7 +116,11 @@ const AirportDataTakeoff = (props) => (
                                 (props.apiValues.fieldElevationTakeoff) : 
                                 ('')}
                             onChange={(e) => {
-                                props.dispatch(addFE(parseFloat(e.target.value)));
+                              let x = e.target.value;
+
+                              if (x.match(/^\d{1,7}(\.\d{0,2})?$/)) {                
+                                props.dispatch(addFE(e.target.value));
+                              }
                             }}
                         />             
                     </td>

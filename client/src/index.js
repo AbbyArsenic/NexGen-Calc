@@ -11,9 +11,9 @@ import registerServiceWorker from './utils/create-react-app/registerServiceWorke
 
 const store = configureStore();
 
-// store.subscribe(() => {
-//     console.log(store.getState());
-// });
+store.subscribe(() => {
+    console.log(store.getState());
+});
 
 // store.dispatch(addUserInputsAll(
 //     {

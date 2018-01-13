@@ -32,7 +32,11 @@ const AirportDataLanding = (props) => (
                                 (props.userInput.weightLanding) :
                                 ('')}
                             onChange={(e) => {
-                                props.dispatch(addWgt(parseFloat(e.target.value)));
+                              let x = e.target.value;
+
+                              if (x.match(/^\d{1,7}(\.\d{0,2})?$/)) {
+                                props.dispatch(addWgt(e.target.value));
+                              }
                             }}
                         />
                     </td>
@@ -49,7 +53,11 @@ const AirportDataLanding = (props) => (
                                 (props.userInput.headwindLanding) :
                                 ('')}
                             onChange={(e) => {
-                                props.dispatch(addHW(parseFloat(e.target.value)));
+                              let x = e.target.value;
+
+                              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                                props.dispatch(addHW(e.target.value));
+                              }
                             }}
                         />
                     </td>
@@ -66,7 +74,11 @@ const AirportDataLanding = (props) => (
                                 (props.apiValues.tempCLanding) : 
                                 ('')}
                             onChange={(e) => {
-                                props.dispatch(addTemp(parseFloat(e.target.value)));
+                              let x = e.target.value;
+
+                              if (x.match(/^([-])?\d*(\.\d{0,2})?$/)) {
+                                props.dispatch(addTemp(e.target.value));
+                              }
                             }}
                         />
                     </td>
@@ -83,7 +95,11 @@ const AirportDataLanding = (props) => (
                                 (props.apiValues.altimeterLanding) : 
                                 ('')}
                             onChange={(e) => {
-                                props.dispatch(addAlt(parseFloat(e.target.value)));
+                              let x = e.target.value;
+
+                              if (x.match(/^\d{1,7}(\.\d{0,2})?$/)) {                
+                                props.dispatch(addAlt(e.target.value));
+                              }
                             }}
                         />             
                     </td>
@@ -100,7 +116,11 @@ const AirportDataLanding = (props) => (
                                 (props.apiValues.fieldElevationLanding) : 
                                 ('')}
                             onChange={(e) => {
-                                props.dispatch(addFE(parseFloat(e.target.value)));
+                              let x = e.target.value;
+
+                              if (x.match(/^\d{1,7}(\.\d{0,2})?$/)) {                
+                                props.dispatch(addFE(e.target.value));
+                              }
                             }}
                         />             
                     </td>
