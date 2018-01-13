@@ -99,7 +99,7 @@ const TOLDreview = ({ calculatedValues }) => (
 				  />
 				  <FormGroup
 				  	id="landingRoll"
-				  	label="Landing Roll."
+				  	label="Landing Dist."
             placeholder="Landing Roll"
             value={(calculatedValues.landingRoll) && 
               ((calculatedValues.landingRoll).toFixed(2))}

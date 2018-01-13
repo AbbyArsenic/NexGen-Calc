@@ -56,7 +56,7 @@ const SignUpPage = (props) => (
 				<Route exact path={`${props.match.url}/tos`} component={TermsOfService} />
 			</div>
 			<div>
-				<Button text="Submit" />
+				<Link to="./Login"><Button text="Submit" /></Link>
 			</div>
 		</form>
 	</div>

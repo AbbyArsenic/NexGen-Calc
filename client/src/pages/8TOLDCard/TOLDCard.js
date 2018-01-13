@@ -1,6 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../../components/Buttons';
 import "./TOLDCard.css";
+import "./TOLDPrint.css";
+
+const printTOLD = () => {
+  window.print();
+}
 
 const TOLDCard = () => (
   <div className="container">
@@ -48,8 +54,8 @@ const TOLDCard = () => (
             <td>D-ALT: </td>
           </tr>
           <tr>
-            <td>LND Roll: </td>
-            <td>LND Roll (50'): </td>
+            <td>LND Dist: </td>
+            <td>LND Dist. (50'): </td>
           </tr>
           <tr>
             <td>APP Speed: </td>
@@ -71,10 +77,9 @@ const TOLDCard = () => (
         </tbody>
       </table>
     </div>
-    <div className="col-md-1">
-      <Button text="Print" />
-  		<Button text="Back" />
-  		<Button text="Home" />
+    <div className="col-md-1 hidePrint">
+      <Button text="Print" onClick={printTOLD} />
+      <Link to="./TOLDreview"><Button text="Back" /></Link>
   	</div>
   </div>
 );
