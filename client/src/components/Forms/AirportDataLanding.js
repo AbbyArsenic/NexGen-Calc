@@ -21,7 +21,7 @@ const AirportDataLanding = (props) => (
         <table>
             <tbody>
                 <tr>
-                    <th>Landing Weight: </th>
+                    <th>Landing Weight (lbs): </th>
                     <td>
                         <input
                             className="form-control"
@@ -42,7 +42,7 @@ const AirportDataLanding = (props) => (
                     </td>
                 </tr>
                 <tr>
-                    <th>Landing Headwind: </th>
+                    <th>Landing Headwind (knots): </th>
                     <td>
                         <input
                             className="form-control"
@@ -63,7 +63,7 @@ const AirportDataLanding = (props) => (
                     </td>
                 </tr>
                 <tr>
-                    <th>Temperature: </th>
+                    <th>Temperature (Cel): </th>
                     <td>
                         <input 
                             className="form-control"
@@ -84,7 +84,7 @@ const AirportDataLanding = (props) => (
                     </td>
                 </tr>
                 <tr>
-                    <th>Altimeter: </th>
+                    <th>Altimeter (ft): </th>
                     <td>
                         <input 
                             className="form-control"
@@ -105,7 +105,7 @@ const AirportDataLanding = (props) => (
                     </td>
                 </tr>
                 <tr>
-                    <th>Elevation: </th>
+                    <th>Elevation (ft): </th>
                     <td>
                         <input 
                             className="form-control"

@@ -22,7 +22,7 @@ const AirportDataTakeoff = (props) => (
         <table>
             <tbody>
                 <tr>
-                    <th>Takeoff Weight: </th>
+                    <th>Takeoff Weight (lbs): </th>
                     <td>
                         <input
                             className="form-control"
@@ -42,7 +42,7 @@ const AirportDataTakeoff = (props) => (
                     </td>
                 </tr>
                 <tr>
-                    <th>Takeoff Headwind: </th>
+                    <th>Takeoff Headwind (knots): </th>
                     <td>
                         <input
                             className="form-control"
@@ -63,7 +63,7 @@ const AirportDataTakeoff = (props) => (
                     </td>
                 </tr>
                 <tr>
-                    <th>Temperature: </th>
+                    <th>Temperature (Cel): </th>
                     <td>
                         <input 
                             className="form-control"
@@ -84,7 +84,7 @@ const AirportDataTakeoff = (props) => (
                     </td>
                 </tr>
                 <tr>
-                    <th>Altimeter: </th>
+                    <th>Altimeter (ft): </th>
                     <td>
                         <input 
                             className="form-control"
@@ -105,7 +105,7 @@ const AirportDataTakeoff = (props) => (
                     </td>
                 </tr>
                 <tr>
-                    <th>Elevation: </th>
+                    <th>Elevation (ft): </th>
                     <td>
                         <input 
                             className="form-control"
